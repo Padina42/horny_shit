@@ -1,0 +1,69 @@
+tt_content.hornyshit_horny_shit = FLUIDTEMPLATE
+tt_content.hornyshit_horny_shit {
+    layoutRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Layouts/
+        1 = {$plugin.tx_hornyshit.view.layoutRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Partials/
+        1 = {$plugin.tx_hornyshit.view.partialRootPath}
+    }
+    templateRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Templates/Content/
+        1 = {$plugin.tx_hornyshit.view.templateRootPath}
+    }
+    templateName = HornyShit
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = image
+        references {
+            fieldName = image
+            table = tt_content
+        }
+        as = data_image
+    }
+    dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.20 {
+        if.isTrue.field = media
+        references {
+            fieldName = media
+            table = tt_content
+        }
+        as = data_media
+    }
+}
+
+tt_content.hornyshit_svt_test = FLUIDTEMPLATE
+tt_content.hornyshit_svt_test {
+    layoutRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Layouts/
+        1 = {$plugin.tx_hornyshit.view.layoutRootPath}
+    }
+    partialRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Partials/
+        1 = {$plugin.tx_hornyshit.view.partialRootPath}
+    }
+    templateRootPaths {
+        0 = EXT:horny_shit/Resources/Private/Templates/Content/
+        1 = {$plugin.tx_hornyshit.view.templateRootPath}
+    }
+    templateName = SvtTest
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.10 {
+        if.isTrue.field = image
+        references {
+            fieldName = image
+            table = tt_content
+        }
+        as = data_image
+    }
+    dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    dataProcessing.20 {
+        if.isTrue.field = media
+        references {
+            fieldName = media
+            table = tt_content
+        }
+        as = data_media
+    }
+}

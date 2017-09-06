@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>
+            <p>Es gibt weitere Optionen/Viewhelper-Argumente, die die Steuerung der Manipulatoren des <em>svt</em>-Viewhelper erleichtern</p>
+            <ul>
+                <li><p><em>ignore</em></p><p style="margin-left: 15px">ermöglicht die Abschaltung der oben genannten Manipulatoren, um die Performance zu optimieren.</p></li>
+                <li><p><em>extract</em></p><p style="margin-left: 15px">ermöglicht die Übergabe von Konfigurationen als serialisierter PHP-Array und im JSON-Format.</p></li>
+                <li><p><em>config</em></p><p style="margin-left: 15px">ermöglicht die Angabe von Strings, die die (escapten) Maskierungsformen von Anführungszeichen bzw. Hochkomma definieren.</p></li>
+                <li><p><em>infoConfigError</em></p><p style="margin-left: 15px">schaltet die Ausgabe von Fehlerhinweisen bei fehlerhafter Konfiguration an oder aus.</p></li>
+            </ul>
+            <p>Die typischen Standardattribute der TYPO3-Viewhelper werden ignoriert.</p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>

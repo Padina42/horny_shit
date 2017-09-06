@@ -1,0 +1,8 @@
+# cat=horny_shit/file; type=string; label=Path to template root (FE)
+plugin.tx_hornyshit.view.templateRootPath =
+
+# cat=horny_shit/file; type=string; label=Path to template partials (FE)
+plugin.tx_hornyshit.view.partialRootPath =
+
+# cat=horny_shit/file; type=string; label=Path to template layouts (FE)
+plugin.tx_hornyshit.view.layoutRootPath =

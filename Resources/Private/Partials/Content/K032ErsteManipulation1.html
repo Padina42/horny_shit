@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <p>Um die Flagge der DDR wie hier per <em>img</em>-Tag darzustellen,
+                habe ich aus dem TYPO3-Fluid einmal den <em>f:uri.image</em>-Viewhelper
+                und einmal <em>f:image</em>-Viewhelper verwendet.</p>
+            <p>Das Ergebnis ist jeweils das Gleiche.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div style="width:{myWidth}px; height: {myHeight}px;">
+            <f:image src="{svg.ddr}" width="{myWidth}" >Pixelbilder sind einfach</f:image>
+        </div>
+        <div style="width:{myWidth}px; height: {myHeight}px;">
+            <img src="{f:uri.image(src:'{svg.ddr}',width:'{myWidth}')}" width="{myWidth}"/>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px; height: &#x7b;myHeight&#x7d;px;&quot;&gt;
+    &lt;f:image src=&quot;&#x7b;svg.ddr&#x7d;&quot; width=&quot;&#x7b;myWidth&#x7d;&quot; &gt;Pixelbilder sind einfach&lt;/f:image&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px; height: &#x7b;myHeight&#x7d;px;&quot;&gt;
+    &lt;img src=&quot;&#x7b;f:uri.image(src:'&#x7b;svg.ddr&#x7d;',width:'&#x7b;myWidth&#x7d;')&#x7d;&quot; width=&quot;&#x7b;myWidth&#x7d;&quot; /&gt;
+&lt;/div&gt;</pre>
+        <pre style="{style.browse}">&lt;div style=&quot;width:150px; height: 120px;&quot;&gt;
+    &lt;img src=&quot;/typo3conf/ext/horny_shit/Resources/Public/Example/DDR.svg&quot; alt=&quot;&quot; width=&quot;150&quot; height=&quot;90&quot;&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+</f:section>
+</body>
+</html>

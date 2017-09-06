@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>Der <em>compress</em>-Manipulator räumt den <em>svg</em>-String vor der Integration in das HTML auf. Je nach gewählter Methode können doppelte
+            Weißzeichen auf ein Leerzeichen reduziert und oder Leerzeichen zwischen Tags entfernt werden.</div>
+        <div>Eine weitere Heruasforderung ist die Maskierung von " als &amp;quot;. In der Version 0.0.3 wurde dies noch automatisch in ein Anfühurngszeichen umgewandelt
+        Ab der immer noch experimentellen Version 0.0.4 sind dafür extra Placeholder anzugeben. Der
+            Vorteil ist, dass man beliebige Zeichenketten als <em>Parameter=>Palceholder</em> verwenden kann.</div>
+
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           rebuild="{   items: { 0: {   xPath: '/*',
+                                                    attribute: {0: {key:'width', new:'auto'},
+                                                                1: {key:'height', new:'auto'},
+                                                                2:{key:'preserveAspectRatio', new:'xMidYMid meet'},
+                                                                3:{key:'viewBox', new:'0 0 1000 1600'}}
+                                                    },
+                                                1: {    xPath:'//*[@id=\'g1991\']',
+                                                    style: { type:'add', key:'display', new:'none'}
+                                                },
+                                                2: {    xPath:'//*[@id=\'g1991\']',
+                                                        child: {    xml: '<path d=&quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &quot; style=&quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&quot; transform=&quot;translate(500,-130) scale(4.3)&quot; />',
+                                                                    type: 'after'}
+                                                }
+                           }}"
+                           compress="all"
+                           parameter="{placeholder:{marker:'&quot;',replacer:'\"'}}"
+            />
+        </div>
+        <div style="color:#b35a00;"><p>Seit der Geburtstagsparty für Ackermann sind sieben Jahre ins Land gegangen.
+            Die Verteidigungsministerin bereitet die Armee auf Einsätze im Innern vor und die Überwachung der Bevölkerung wird
+            vorangetrieben. Ein Militärputsch beim Sieg des SPD würde mich nicht überraschen. </p>
+            <p><strong>Das gezeigte Macht-Marken-Emblem der gezeigten Flagge ist wohl nicht mehr zeitgemäß.</strong></p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmRebuildC}',width:'900')}" style="width:90%;height:auto;" />
+        </pre>
+
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px;height: &#x7b;myHeight&#x7d;px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;&#x7b;svg.ddr&#x7d;&quot;
+                   rebuild=&quot;&#x7b;   items: &#x7b; 0: &#x7b;   xPath: '/*',
+                                            attribute: &#x7b;0: &#x7b;key:'width', new:'auto'&#x7d;,
+                                                        1: &#x7b;key:'height', new:'auto'&#x7d;,
+                                                        2:&#x7b;key:'preserveAspectRatio', new:'xMidYMid meet'&#x7d;,
+                                                        3:&#x7b;key:'viewBox', new:'0 0 1000 1600'&#x7d;&#x7d;
+                                            &#x7d;,
+                                        1: &#x7b;    xPath:'//*[@id=\'g1991\']',
+                                            style: &#x7b; type:'add', key:'display', new:'none'&#x7d;
+                                        &#x7d;,
+                                        2: &#x7b;    xPath:'//*[@id=\'g1991\']',
+                                                child: &#x7b;    xml: '&lt;path d=&amp;quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &amp;quot; style=&amp;quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&amp;quot; transform=&amp;quot;translate(500,-130) scale(4.3)&amp;quot; /&gt;',
+                                                            type: 'after'&#x7d;
+                                        &#x7d;
+                   &#x7d;&#x7d;&quot;
+                   compress=&quot;all&quot;
+    /&gt;
+&lt;/div&gt;
+        </pre>
+        <pre style="{style.browse}">
+&lt;div style=&quot;width:150px;height: 120px; overflow: hidden;&quot;&gt;
+            &lt;?xml version=&quot;1.0&quot;?&gt;&lt;svg xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; <span style="color:#fefefe;">[...]</span>&gt; <span style="color:#fefefe;">[...]</span> &lt;g transform=&quot;translate(-896.5747,-1479.218)&quot; id=&quot;g1991&quot; style=&quot; color:#FF00FF;display:none&quot;&gt; <span style="color:#fefefe;">[...]</span> &lt;path d=&quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &quot; style=&quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&quot; transform=&quot;translate(500,-130) scale(4.3)&quot;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+

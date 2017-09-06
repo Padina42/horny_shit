@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <p>Bezugspunkt ist die linke obere Ecke. <br />Es gibt zwar style-Attribute, aber dafür sollte CSS zuständig bleiben.</p>
+        <h5>Polyline, Polygon oder Path</h5>
+        <p>Hier muss man jeweils eine Liste von Punkten angeben. Ein <em>polygon</em>em> ist immer zyklisch,
+            weil dort im Gegensatz zur <em>polyline</em> der letzten Punkt mit dem ersten verbunden wird.
+        </p>
+        <p>Das <em>Schweizer Teschenmesser</em> ist der <em>path</em>-Tag. Durch geschickte Wahl der Pfades kann
+            man mit Hilfe der Fill-Rule auch Löcher schaffen.</p>
+
+    </div>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <svg viewBox="0 0 2000 2000" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+                <rect  x="23" y="134" width="305" height="386" style="fill:transparent; stroke-width:1%; stroke:#5d5203;" />
+                <rect  x="123" y="234" width="345" height="456" style="fill:gold; stroke-width:1%; stroke:#5d5203;" />
+                <rect  x="223" y="334" width="145" height="256" style="fill:transparent; stroke-width:1%; stroke:#5d5203;" />
+
+                <polyline points="1023 134, 1023 520, 1328 520, 1328 134, 1023 134" style="fill:transparent; stroke-width:1%; stroke:#065461;" />
+                <polyline points="1123 234, 1468 234, 1468 690, 1123 690, 1123 234" style="fill:#d0faa6; stroke-width:1%; stroke:#065461;" />
+                <polyline points="1223 334, 1368 334, 1368 590, 1223 590, 1223 334" style="fill:transparent; stroke-width:1%; stroke:#065461;" />
+
+                <polygon  points=" 23 1134,  23 1520, 328 1520, 328 1134 "          style="fill:transparent; stroke-width:1%; stroke:#062861;" />
+                <polygon  points="123 1234, 468 1234, 468 1690, 123 1690 "          style="fill:#2E64FE; stroke-width:1%; stroke:#380B61;" />
+                <polygon  points="223 1334, 368 1334, 368 1590, 223 1590 "          style="fill:transparent; stroke-width:1%; stroke:#380B61;" />
+
+                <path d="M 1023 1134 h 305 v 386 h-305 z "                          style="fill:transparent; stroke-width:1%; stroke:#8e051b;" />
+                <path d="M 1123 1234 h 345 v 456 h-345 z
+                         M 1223 1334 h 145 v 256 h-145 z"                           style="fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;" />
+            </svg>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+            &lt;svg viewBox=&quot;0 0 2000 2000&quot; width=&quot;100%&quot; height=&quot;auto&quot; preserveAspectRatio=&quot;xMidYMid meet&quot;&gt;
+                &lt;rect   x=&quot;23&quot; y=&quot;134&quot; width=&quot;305&quot; height=&quot;386&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#5d5203;&quot; /&gt;
+                &lt;rect  x=&quot;123&quot; y=&quot;234&quot; width=&quot;345&quot; height=&quot;456&quot; style=&quot;fill:gold;        stroke-width:1%; stroke:#5d5203;&quot; /&gt;
+                &lt;rect  x=&quot;223&quot; y=&quot;334&quot; width=&quot;145&quot; height=&quot;256&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#5d5203;&quot; /&gt;
+
+                &lt;polyline points=&quot;1023 134, 1023 520, 1328 520, 1328 134, 1023 134&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#065461;&quot; /&gt;
+                &lt;polyline points=&quot;1123 234, 1468 234, 1468 690, 1123 690, 1123 234&quot; style=&quot;fill:#d0faa6;     stroke-width:1%; stroke:#065461;&quot; /&gt;
+                &lt;polyline points=&quot;1223 334, 1368 334, 1368 590, 1223 590, 1223 334&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#065461;&quot; /&gt;
+
+                &lt;polygon  points=&quot; 23 1134,  23 1520, 328 1520, 328 1134 &quot;          style=&quot;fill:transparent; stroke-width:1%; stroke:#062861;&quot; /&gt;
+                &lt;polygon  points=&quot;123 1234, 468 1234, 468 1690, 123 1690 &quot;          style=&quot;fill:#2E64FE;     stroke-width:1%; stroke:#380B61;&quot; /&gt;
+                &lt;polygon  points=&quot;223 1334, 368 1334, 368 1590, 223 1590 &quot;          style=&quot;fill:transparent; stroke-width:1%; stroke:#380B61;&quot; /&gt;
+
+                &lt;path d=&quot;M 1023 1134 h 305 v 386 h-305 z &quot;                          style=&quot;fill:transparent; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+                &lt;path d=&quot;M 1123 1234 h 345 v 456 h-345 z
+                         M 1223 1334 h 145 v 256 h-145 z&quot;                           style=&quot;fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+            &lt;/svg&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+
+

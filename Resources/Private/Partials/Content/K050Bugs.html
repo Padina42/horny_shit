@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="padding:1%;float:left; width:47%; "  id="{partial.name}">
+        <div>
+            Die Konfiguration kann schnell wegen seienr verschachtelten Arrays unübersichtlich werden.
+            Um Konfigurationsfehlern schnell auf die Spur zu kommen, können Sie
+            im Viewhelper das Attribut <em>infoConfigError</em> auf <em>true</em> setzen und Sie erhalten  dann
+            bei fehlerhafter Konfiguration Hinweise zur Ursaches des Fehlers. Da die Konfiguration kaskadenartig
+            analysiert wird, kann auch ein einzelner Fehler durchaus zu einer Kaskade von Fehlermeldungen führen.
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>

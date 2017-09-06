@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>Hammer und Sichel fehlen in dem zweiten Beispiel, dass eine komplexere
+            <em>rebuild</em>-Anweisung vorstellt. Neben den Manipulationen am Root-Knoten wird die Gruppe, die die
+            Hammer und Sichel-Definitionen enthält, per xPath bestimmt und mit der CSS-Definition "display:none;" deaktiviert.
+            Ein <em>rebuild</em>-Submanipulator zum Löschen von Tags und/oder Attributen ist als &quot;toDo&quot; vermerkt.</div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           rebuild="{   items: { 0: {   xPath: '/*',
+                                                    attribute: {0: {key:'width', new:'auto'},
+                                                                1: {key:'height', new:'auto'},
+                                                                2:{key:'preserveAspectRatio', new:'xMidYMid meet'},
+                                                                3:{key:'viewBox', new:'0 0 1000 1600'}}
+                                                    },
+                                                1: {    xPath:'//*[@id=\'g1991\']',
+                                                    style: { type:'add', key:'display', new:'none'}
+                                                }
+                                    }}"
+            />
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmRebuild2}',width:'900')}" style="width:90%;height:auto;" />
+        </pre>
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:{myWidth}px;height: {myHeight}px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;{svg.ddr}&quot;
+                   rebuild=&quot;{   items: { 0: {   xPath: '/*',
+                                            attribute: {0: {key:'width', new:'auto'},
+                                                        1: {key:'height', new:'auto'},
+                                                        2:{key:'preserveAspectRatio', new:'xMidYMid meet'},
+                                                        3:{key:'viewBox', new:'0 0 1000 1600'}}
+                                            },
+                                        1: {    xPath:'//*[@id=\'g1991\']',
+                                            style: { type:'add', key:'display', new:'none'}
+                                        }
+                            }}&quot;
+    /&gt;
+&lt;/div&gt;
+        </pre>
+        <pre style="{style.browse}">
+&lt;div style=&quot;width:150px;height: 120px; overflow: hidden;&quot;&gt;
+            &lt;!--?xml version=&quot;1.0&quot;?--&gt;
+    &lt;svg xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+         version=&quot;1.0&quot; width=&quot;auto&quot; height=&quot;auto&quot; id=&quot;svg4463&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 1000 1600&quot;&gt;
+    <span style="color:#fefefe;">[...]</span>
+          &lt;g transform=&quot;translate(-896.5747,-1479.218)&quot; id=&quot;g1991&quot; style=&quot; color:#FF00FF;display:none&quot;&gt;
+    <span style="color:#fefefe;">[...]</span>
+      &lt;/g&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+

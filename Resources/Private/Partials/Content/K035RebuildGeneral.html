@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>
+            Im <em>svt</em>-Viewhelper können Sie <a href="http://www.zvon.org/xxl/XPathTutorial/General_ger/examples.html">über xPath </a>
+            einzelne Knoten oder auch mehrere Knoten erfassen und bei diesen verschiedene Manipulationen vornehmen lassen.
+            Wie beim Suchen-Ersetzen-Manipulationen können Sie eine Aktion auch mehrfach ausführen lassen, wobei hier aber keine Clean-Funktion vorgesehen ist.
+            <ul>
+                <li><strong><em>attribute</em></strong> - Sie können Attribute ausgewählter Tages überschreiben, schaffen oder leeren.</li>
+                <li><strong><em>child</em></strong> - Sie können SVG-Fragmente in den bestehende Muster-SVG-Code einfügen.</li>
+                <li><strong><em>class</em></strong> - Sie können Klassen bei einzelnen Tags dynamisch hinzufügen oder entfernen.</li>
+                <li><strong><em>image</em></strong> - Sie können Links zu Pixel-Bildern in den SVG-Code einfügen.</li>
+                <li><strong><em>style</em></strong> - Sie können spezifisch CSS-Style-Definitionen ändern, einfügen oder überschreiben.</li>
+                <li><strong><em>use</em></strong> - Sie können das Use-Element benutzen, um zum Beispiel dynamisch fraktale Kompositionen zu schaffen.</li>
+                <li><strong><em>value</em></strong> - Sie können den Wert von Tags ändern, um zum Beispiel eine Schlagzeile im SVG-Teaser anzupassen.</li>
+                <li><strong><em>delete</em></strong> - (geplant) Sie können Tags oder Attribute löschen.</li>
+            </ul>
+            <div>Prüfen Sie die Operationen der verschiedenen Browser genau, denn schon bei diesem Beispiel heute (31.7.2017) zeigen
+                die aktuellen Versionen von Firefox und Chrome durchaus unterschiedliche Ergebnisse. Unerwartet ist das Verhalten von Chrome,
+                weil dieser das SVG - für mich unverständlicherweise - auf 50% verkleinert.</div>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>

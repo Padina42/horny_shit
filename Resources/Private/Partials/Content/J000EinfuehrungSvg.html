@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <h5>Links zu guten technischen Tutorials</h5>
+        <ul>
+            <li><a href="https://www.mediaevent.de/tutorial/svg-cheat-sheet.html">kurzweilig und didaktisch fokussiert</a></li>
+            <li><a href="http://svg.tutorial.aptico.de/">akademisch, technisch ausführlich</a></li>
+            <li><a href="http://www.selfsvg.info/">auch gut und technisch ausführlich</a></li>
+            <li><a href="https://developer.mozilla.org/de/docs/Web/SVG" >Nachschlage-Bibel</a></li>
+            <li><a href="http://caniuse.com/" >Implementierungs-Referenz</a></li>
+        </ul>
+        <h5>Anwendungsaspekte</h5>
+        <p>Es gibt eine ganze Reihe von Tutiorial, die die technisches Aspekte von SVG erläutern. Mir ist aktuell (2017/08/18)
+            kein Tutorial bekannt, dass sich wirklich um die Anwendung kümmert. Mein <em>svt</em>-Ansatz hat weniger die Technik im Blick,
+            als vielmehr die Anwendung in dynamischen Systemen. <em>svt</em>-Anwendungen könnten sein:
+        </p>
+        <ul>
+            <li>Montage-Anleitunge</li>
+            <li>animierte Web-Plakate</li>
+            <li>Eye-Catcher für Internet-Shops</li>
+            <li>Teaser</li>
+            <li>Grafiken &amp; Diagramme</li>
+            <li>animierte Elemente</li>
+            <li>...</li>
+        </ul>
+    </div>
+</f:section>
+</body>
+</html>
+
+

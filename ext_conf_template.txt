@@ -1,0 +1,2 @@
+# cat=config.hornyShit//general; type=boolean; label=LLL:EXT:horny_shit/Resources/Private/Language/locallang_db.xlf:config.hornyShit.activeDevelopmentEnvironment
+activeDevelopmentEnvironment = 0

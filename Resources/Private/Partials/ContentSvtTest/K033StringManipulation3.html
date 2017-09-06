@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <div style="{style.doc}" id="{partial.name}">
+        <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+        <div>
+            Der <em>workOver</em>-Manipulator ist identisch mit dem <em>prepare</em>-Manipulator.
+            Während die Suchen-Ersetzen-Manipulation des <em>prepare</em>-Manipulators
+            als allererster Manipulator noch vor der Codereinigung mit dem <em>namespace</em>-Manipulator und dem SVG-weit wirkenden  <em>remove</em>em>-Manipulator ausgeführt wird,
+            wird der <em>workOver</em> Manipulator als Vorletzter, also vorm <em>compress</em>-Manipulator, ausgeführt.
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <svt:svt src="{svg.ddr}"
+                           workOver="{ 0: {  search: 'width=&quot;1000&quot; height=&quot;600&quot;',
+                                            replace: 'preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 1000 1600&quot;',
+                                            method: 'normal'
+                           }}"
+            />
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px;height: &#x7b;myHeight&#x7d;px; overflow: hidden;&quot;&gt;
+    &lt;svt:svt src=&quot;&#x7b;svg.ddr&#x7d;&quot;
+                   workOver=&quot;&#x7b; 0: &#x7b;  search: 'width=&amp;quot;1000&amp;quot; height=&amp;quot;600&amp;quot;',
+                                    replace: 'preserveAspectRatio=&amp;quot;xMidYMid meet&amp;quot; viewBox=&amp;quot;0 0 1000 1600&amp;quot;',
+                                    method: 'normal'
+                   &#x7d;&#x7d;&quot;
+    /&gt;
+&lt;/div&gt;
+        </pre>
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmWork}',width:'900')}" style="width:90%;height:auto;" />
+        </pre>
+        <pre style="{style.browse}">
+&lt;div style=&quot;width:150px;height: 120px; overflow: hidden;&quot;&gt;
+    &lt;svg xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+         version=&quot;1.0&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 1000 1600&quot; id=&quot;svg4463&quot;
+    &gt;
+    <span style="color:#fefefe;">[...]</span>
+    &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+
+</f:section>
+</body>
+</html>

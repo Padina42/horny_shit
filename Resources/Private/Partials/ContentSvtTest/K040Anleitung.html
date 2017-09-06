@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="padding:1%;float:left; width:47%; "  id="{partial.name}">
+        <div>
+<p>            Der <em>svt</em>-Viewhelper ist Ihre Teaser-Baumaschine. Die Beispiele verdeutlichten in dem vorliegenden Plugin
+            beispielhaft
+            das Funktionspriinzip.
+            Hinter dem <em>svt</em>-Viewhelper steht aber auch die Idee, daas  den Arbeitsfluss der Webseitengestaltung
+            ändern kann bzw. wird.
+</p>
+            Sie können den <em>svt</em>-Viewhelper zum Beispiel nutzen, um Ihren Shop aufzupeppen.
+        </div>
+        <div>
+            Nachfolgend mein <em>Ein-Produkt</em>-Shop in eigener Sache.
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>

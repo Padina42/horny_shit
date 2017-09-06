@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>
+            <div>Meine Kontaktdaten finden Sie im Impressum der Website www.mobger.de</div>
+            <div>info@mobger.de</div>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+<strong>Tassenbestellungen nur gegen Vorkasse per Email </strong>
+
+<strong>Ablauf</strong>
+1. Sie schicken mir Ihre Bestellung (Lieferanschrift) per Email.
+2. Ich schicke Ihnen meine Kontonummer und einen HashCode.
+3. Sie überweisen die Gratifikation für HornyShit und geben auf der Gratifikation den Hashcode an..
+4. Ich schicke Ihnen die Tasse als Gratifikation für Ihre Spende zum "Horny Shit".
+        </pre>
+        <pre style="{style.browse}">
+Für die Nutzung des <em>svt</em>-Viewhelpers erhebe ich keine Lizenzkosten.
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>

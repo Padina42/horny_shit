@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+
+    </div>
+    <div style="{style.doc}" id="{partial.name}">
+        <p>Man könnte meinen, dass Balkendiagramme einfache Gebilde sind. Sie bestehen aus einer Grundlinie,
+            einem farbigen Rechteck und vielleicht noch einem kurzen Text. </p>
+        <p>Das erste Beispiel wurde von der <a href="https://webmaster-glossar.de/einfaches-balkendiagramm-mit-svg-erstellen.html">
+            Seite webmeister-glossar</a> aus dem Tutorial übernommen. Es ist vollständig statisch. Sobald man die dynamische Erweiterung
+            zum Beispiel mit dem svt-viewhelper in Bettracht zieht, steht man vor zwei Herausforderungen:</p>
+        <ol>
+            <li>Die Einzelwerte pro Balken sind vorab unbekannt. <br/><em>
+                In der zweiten Variante wurde per JavaScript der Viewport dynamisch bestimmt. Leider bin ich im CSS nicht so firm und
+                weiß nicht, ob es ähnlich wie count() im CSS eine Funktion für solche Aufgaben gibt. </em>
+            </li>
+            <li>Die Anzahl der Balken kann im dynamischen Verlauf meist zwischen 3 bis 20 variaieren.<br />
+                <em>Wenn der svt-Renderer nicht rechnet, sollte man eine entsprechende JavaScript-Funktion schreiben.
+                    Manko. Im Beispiel müsste der Renderer noch die y-Werte bestimmen. Sicher könnte man im Javascript auch
+                    eine Funktion definieren, die die Abstände bestimmt.
+                </em>
+            </li>
+        </ol>
+        <div>
+            <!-- Max-Weite + Abstand nach links + padding = 287 + 50 + 10 -->
+            <svg viewBox="0 0 347 145"
+                 onload="this.setAttribute('viewBox','0 0 347 145');"
+                 width="100%"
+                 height="auto"
+                 preserveAspectRatio="xMidYMid meet"
+            >
+                    <text x="10" y="50" font-size="12" font-family="Arial" fill="#404040">207</text>
+                    <rect x="50" y="35" width="207" height="20" rx="3" ry="3" fill="#2A7BB4" />
+                    <text x="10" y="80" font-size="12" font-family="Arial" fill="#404040">287</text>
+                    <rect x="50" y="65" width="287" height="20" rx="3" ry="3" fill="#2A7BB4" />
+                    <text x="10" y="110" font-size="12" font-family="Arial" fill="#404040">97</text>
+                    <rect x="50" y="95" width="97" height="20" rx="3" ry="3" fill="#B4472A" />
+                    <line x1="51" y1="10" x2="51" y2="140" stroke-width="2" stroke="#808080" />
+            </svg>
+            <svg viewBox="0 0 1000 500"
+                 onload="dummyList=[207,287,97]; dummyMax=Math.max(...dummyList)+50+10; dummyHeight=3*30+2*10+25; dummyView='0 0 '+dummyMax+' '+dummyHeight; this.setAttribute('viewBox',dummyView);"
+                 width="100%"
+                 height="auto"
+                 preserveAspectRatio="xMidYMid meet"
+            >
+                <line x1="51" y1="10" x2="51" y2="140" stroke-width="2" stroke="#808080" />
+
+                <rect x="50" y="35" width="207" height="20" rx="3" ry="3" fill="#2A7BB4" />
+                <text x="10" y="50" font-size="12" font-family="Arial" fill="#404040">207</text>
+                <rect x="50" y="65" width="287" height="20" rx="3" ry="3" fill="#2A7BB4" />
+                <text x="10" y="80" font-size="12" font-family="Arial" fill="#404040">287</text>
+                <rect x="50" y="95" width="97" height="20" rx="3" ry="3" fill="#B4472A" />
+                <text x="10" y="110" font-size="12" font-family="Arial" fill="#404040">97</text>
+            </svg>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+            &lt;!-- Max-Weite + Abstand nach links + padding = 287 + 50 + 10 = 347 --&gt;
+            <!-- Max-Weite + Abstand nach links + padding = 287 + 50 + 10 -->
+            &lt;svg viewBox=&quot;0 0 347 145&quot;
+                 onload=&quot;this.setAttribute('viewBox','0 0 347 145');&quot;
+                 width=&quot;100%&quot;
+                 height=&quot;auto&quot;
+                 preserveAspectRatio=&quot;xMidYMid meet&quot;
+            &gt;
+                    &lt;text x=&quot;10&quot; y=&quot;50&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;207&lt;/text&gt;
+                    &lt;rect x=&quot;50&quot; y=&quot;35&quot; width=&quot;207&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#2A7BB4&quot; /&gt;
+                    &lt;text x=&quot;10&quot; y=&quot;80&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;287&lt;/text&gt;
+                    &lt;rect x=&quot;50&quot; y=&quot;65&quot; width=&quot;287&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#2A7BB4&quot; /&gt;
+                    &lt;text x=&quot;10&quot; y=&quot;110&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;97&lt;/text&gt;
+                    &lt;rect x=&quot;50&quot; y=&quot;95&quot; width=&quot;97&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#B4472A&quot; /&gt;
+                    &lt;line x1=&quot;51&quot; y1=&quot;10&quot; x2=&quot;51&quot; y2=&quot;140&quot; stroke-width=&quot;2&quot; stroke=&quot;#808080&quot; /&gt;
+            &lt;/svg&gt;
+            &lt;svg viewBox=&quot;0 0 1000 500&quot;
+                 onload=&quot;dummyList=[207,287,97]; dummyMax=Math.max(...dummyList)+50+10; dummyHeight=3*30+2*10+25; dummyView='0 0 '+dummyMax+' '+dummyHeight; this.setAttribute('viewBox',dummyView);&quot;
+                 width=&quot;100%&quot;
+                 height=&quot;auto&quot;
+                 preserveAspectRatio=&quot;xMidYMid meet&quot;
+            &gt;
+                &lt;line x1=&quot;51&quot; y1=&quot;10&quot; x2=&quot;51&quot; y2=&quot;140&quot; stroke-width=&quot;2&quot; stroke=&quot;#808080&quot; /&gt;
+
+                &lt;rect x=&quot;50&quot; y=&quot;35&quot; width=&quot;207&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#2A7BB4&quot; /&gt;
+                &lt;text x=&quot;10&quot; y=&quot;50&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;207&lt;/text&gt;
+                &lt;rect x=&quot;50&quot; y=&quot;65&quot; width=&quot;287&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#2A7BB4&quot; /&gt;
+                &lt;text x=&quot;10&quot; y=&quot;80&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;287&lt;/text&gt;
+                &lt;rect x=&quot;50&quot; y=&quot;95&quot; width=&quot;97&quot; height=&quot;20&quot; rx=&quot;3&quot; ry=&quot;3&quot; fill=&quot;#B4472A&quot; /&gt;
+                &lt;text x=&quot;10&quot; y=&quot;110&quot; font-size=&quot;12&quot; font-family=&quot;Arial&quot; fill=&quot;#404040&quot;&gt;97&lt;/text&gt;
+            &lt;/svg&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>

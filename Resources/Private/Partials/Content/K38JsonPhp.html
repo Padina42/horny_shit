@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div style="color:#b35a00;">Seit der Geburtstagsparty für Ackermann im April 2008, zu der Bundes-Mama Merkel eingeladen hat,
+            ist aber klar, wer wirklich das Sagen hat. Bemerkenswert ist, dass ein halbes Jahr
+            nach der Party der Finanzbosse in vom Merkel geführten Bundeskanzleramt die Pleite der Lehmann Brothers Realität wurde. <br /><br />
+            Was wurde
+            bei der Banker-Party im Führungszentrum von Deutschland besprochen?
+            <ul>
+                <li>die Abwicklung der Finanzkrise </li>
+                <li>die Sozialhilfe für reiche Pleite-Banker in Form von Bad-Banks und Boni-Sicherung</li>
+                <li>...</li>
+                <li>...</li>
+
+            </ul>
+        </div>
+
+        <div>In der bisherigen Definition wurden jeweils die Attributes des Viewhelpers verwendet, was die Lesbarkeit
+            der Templates unnötig kompliziert macht.
+            Man kann, wie die folgenden Beispiele zeigen, aber auch die Konfiguration als JSON-String oder als serialisierten
+            PHP-Array übergeben. </div>
+        <div>
+            <p>Das nebenstehende Mind-Map zeigt an, welche Aspekte für die vier Beispiele
+            berücksichtigt werden mussten. </p>
+            <p>Im originalen Mind-Map finden sie keine Abzweigung vom <em>entry</em>-Knoten im <em>extract</em>-Manipulatorzweig, weil
+            der nachfolgende String eigentlich nur im JSON-Format die Konfiguration für die Manipulatoren
+            selbstähnlich doppelt. Da Mind-Maps zur Abbildung von rekursiven und/oder fraktalen Strukturen schlecht
+                geeignet sind, wurden sie in der Dokumentation weggelassen. Hier wurden sie, um das Verständnis zu erleichtern,
+                trotzdem eingefügt.</p>
+        </div>
+        <div> <p><strong>Achtung: </strong></p>
+            <p>Damit der String nicht in Konflikt mit Fluid kommen, wurden Anführungszeichen, Hochkommata
+            und geschweite Klammern maskiert. Per Default sind die Begriffe `xyzQuotezyx`["], `xyzAcutezyx`[']
+                und `xyzOpenBracezyx`[{] als Maskierungscode vorgesehen. Die Defaultwerte können individuell angepasst werden.</p>
+            <p><strong>Selbstkritik:</strong></p><p>Sorry, aber das Konzept der Maskierung der Maskierung der Maskierung ...
+                habe ich noch nicht konsequent zu Ende gedacht, weshalb die Beschreibung hier vielleicht etwas unklar wirkt.</p>
+        </div>
+        <div>
+            <p><b>Tipp:</b></p>
+            <p>Wer dagegen Wert auf lesbare Varianten legt, der kann den Konfigurationsstring im JSON-Format auch in ein eigenes
+            Partial auslagern.</p>
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           extract="{   type: 'json',
+                                        entry: 'xyzOpenBracezyxxyzQuotezyxcheckSvgxyzQuotezyx:xyzQuotezyxxmlSvgxyzQuotezyx,xyzQuotezyxrebuildxyzQuotezyx:xyzOpenBracezyxxyzQuotezyxitemsxyzQuotezyx:[xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/*xyzQuotezyx,xyzQuotezyxattributexyzQuotezyx:[xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxwidthxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxautoxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxheightxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxautoxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxpreserveAspectRatioxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxxMidYMid meetxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxviewBoxxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyx0 0 1000 1600xyzQuotezyx}]},xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/\/*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx,xyzQuotezyxstylexyzQuotezyx:xyzOpenBracezyxxyzQuotezyxtypexyzQuotezyx:xyzQuotezyxaddxyzQuotezyx,xyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxdisplayxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxnonexyzQuotezyx}},xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/\/*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx,xyzQuotezyxchildxyzQuotezyx:xyzOpenBracezyxxyzQuotezyxxmlxyzQuotezyx:xyzQuotezyx<path d=&quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &quot; style=&quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&quot; transform=&quot;translate(500,-130) scale(4.3)&quot; \/>xyzQuotezyx,xyzQuotezyxtypexyzQuotezyx:xyzQuotezyxafterxyzQuotezyx}}]},xyzQuotezyxcompressxyzQuotezyx:xyzQuotezyxallxyzQuotezyx,xyzQuotezyxinfoConfigErrorxyzQuotezyx:false}'
+                                        }"
+            />
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           extract="{   type: 'json',
+                                        entry: '{f:render(partial:\'Content/K38ParamJson\',section:\'main\')}'
+                                        }"
+            />
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           extract="{   type: 'serialized',
+                                        entry: 'a:5:xyzOpenBracezyxs:8:xyzQuotezyxcheckSvgxyzQuotezyx;s:6:xyzQuotezyxxmlSvgxyzQuotezyx;s:7:xyzQuotezyxrebuildxyzQuotezyx;a:1:xyzOpenBracezyxs:5:xyzQuotezyxitemsxyzQuotezyx;a:3:xyzOpenBracezyxi:0;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:2:xyzQuotezyx/*xyzQuotezyx;s:9:xyzQuotezyxattributexyzQuotezyx;a:4:xyzOpenBracezyxi:0;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:5:xyzQuotezyxwidthxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxautoxyzQuotezyx;}i:1;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:6:xyzQuotezyxheightxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxautoxyzQuotezyx;}i:2;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:19:xyzQuotezyxpreserveAspectRatioxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:13:xyzQuotezyxxMidYMid meetxyzQuotezyx;}i:3;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:7:xyzQuotezyxviewBoxxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:13:xyzQuotezyx0 0 1000 1600xyzQuotezyx;}}}i:1;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:16:xyzQuotezyx//*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx;s:5:xyzQuotezyxstylexyzQuotezyx;a:3:xyzOpenBracezyxs:4:xyzQuotezyxtypexyzQuotezyx;s:3:xyzQuotezyxaddxyzQuotezyx;s:3:xyzQuotezyxkeyxyzQuotezyx;s:7:xyzQuotezyxdisplayxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxnonexyzQuotezyx;}}i:2;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:16:xyzQuotezyx//*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx;s:5:xyzQuotezyxchildxyzQuotezyx;a:2:xyzOpenBracezyxs:3:xyzQuotezyxxmlxyzQuotezyx;s:226:xyzQuotezyx<path d=&quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &quot; style=&quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&quot; transform=&quot;translate(500,-130) scale(4.3)&quot; />xyzQuotezyx;s:4:xyzQuotezyxtypexyzQuotezyx;s:5:xyzQuotezyxafterxyzQuotezyx;}}}}s:8:xyzQuotezyxcompressxyzQuotezyx;s:3:xyzQuotezyxallxyzQuotezyx;s:7:xyzQuotezyxextractxyzQuotezyx;s:0:xyzQuotezyxxyzQuotezyx;s:15:xyzQuotezyxinfoConfigErrorxyzQuotezyx;b:0;}'
+                                        }"
+            />
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           extract="{   type: 'serialized',
+                                        entry: '{f:render(partial:\'Content/K38ParamSerialized\',section:\'main\')}'
+                                        }"
+            />
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmExtract}',width:'900')}" style="width:90%;height:auto;" />
+        </pre>
+
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:{myWidth}px;height: {myHeight}px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;{svg.ddr}&quot;
+                   extract=&quot;{   type: 'json',
+                                entry: 'xyzOpenBracezyxxyzQuotezyxcheckSvgxyzQuotezyx:xyzQuotezyxxmlSvgxyzQuotezyx,xyzQuotezyxrebuildxyzQuotezyx:xyzOpenBracezyxxyzQuotezyxitemsxyzQuotezyx:[xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/*xyzQuotezyx,xyzQuotezyxattributexyzQuotezyx:[xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxwidthxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxautoxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxheightxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxautoxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxpreserveAspectRatioxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxxMidYMid meetxyzQuotezyx},xyzOpenBracezyxxyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxviewBoxxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyx0 0 1000 1600xyzQuotezyx}]},xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/\/*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx,xyzQuotezyxstylexyzQuotezyx:xyzOpenBracezyxxyzQuotezyxtypexyzQuotezyx:xyzQuotezyxaddxyzQuotezyx,xyzQuotezyxkeyxyzQuotezyx:xyzQuotezyxdisplayxyzQuotezyx,xyzQuotezyxnewxyzQuotezyx:xyzQuotezyxnonexyzQuotezyx}},xyzOpenBracezyxxyzQuotezyxxPathxyzQuotezyx:xyzQuotezyx\/\/*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx,xyzQuotezyxchildxyzQuotezyx:xyzOpenBracezyxxyzQuotezyxxmlxyzQuotezyx:xyzQuotezyx&lt;path d=&amp;quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &amp;quot; style=&amp;quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&amp;quot; transform=&amp;quot;translate(500,-130) scale(4.3)&amp;quot; \/&gt;xyzQuotezyx,xyzQuotezyxtypexyzQuotezyx:xyzQuotezyxafterxyzQuotezyx}}]},xyzQuotezyxcompressxyzQuotezyx:xyzQuotezyxallxyzQuotezyx,xyzQuotezyxinfoConfigErrorxyzQuotezyx:false}'
+                                }&quot;
+    /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:{myWidth}px;height: {myHeight}px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;{svg.ddr}&quot;
+                   extract=&quot;{   type: 'json',
+                                entry: '{f:render(partial:\'Content/K38ParamJson\',section:\'main\')}'
+                                }&quot;
+    /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:{myWidth}px;height: {myHeight}px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;{svg.ddr}&quot;
+                   extract=&quot;{   type: 'serialized',
+                                entry: 'a:5:xyzOpenBracezyxs:8:xyzQuotezyxcheckSvgxyzQuotezyx;s:6:xyzQuotezyxxmlSvgxyzQuotezyx;s:7:xyzQuotezyxrebuildxyzQuotezyx;a:1:xyzOpenBracezyxs:5:xyzQuotezyxitemsxyzQuotezyx;a:3:xyzOpenBracezyxi:0;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:2:xyzQuotezyx/*xyzQuotezyx;s:9:xyzQuotezyxattributexyzQuotezyx;a:4:xyzOpenBracezyxi:0;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:5:xyzQuotezyxwidthxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxautoxyzQuotezyx;}i:1;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:6:xyzQuotezyxheightxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxautoxyzQuotezyx;}i:2;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:19:xyzQuotezyxpreserveAspectRatioxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:13:xyzQuotezyxxMidYMid meetxyzQuotezyx;}i:3;a:2:xyzOpenBracezyxs:3:xyzQuotezyxkeyxyzQuotezyx;s:7:xyzQuotezyxviewBoxxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:13:xyzQuotezyx0 0 1000 1600xyzQuotezyx;}}}i:1;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:16:xyzQuotezyx//*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx;s:5:xyzQuotezyxstylexyzQuotezyx;a:3:xyzOpenBracezyxs:4:xyzQuotezyxtypexyzQuotezyx;s:3:xyzQuotezyxaddxyzQuotezyx;s:3:xyzQuotezyxkeyxyzQuotezyx;s:7:xyzQuotezyxdisplayxyzQuotezyx;s:3:xyzQuotezyxnewxyzQuotezyx;s:4:xyzQuotezyxnonexyzQuotezyx;}}i:2;a:2:xyzOpenBracezyxs:5:xyzQuotezyxxPathxyzQuotezyx;s:16:xyzQuotezyx//*[@id=xyzAcutezyxg1991xyzAcutezyx]xyzQuotezyx;s:5:xyzQuotezyxchildxyzQuotezyx;a:2:xyzOpenBracezyxs:3:xyzQuotezyxxmlxyzQuotezyx;s:226:xyzQuotezyx&lt;path d=&amp;quot;m 1,1 h 148 v 148 h -148 z m 21,21 v 107 h 107 v -107 z m 68,15 h 27 l -56,77 h -27 z &amp;quot; style=&amp;quot;z-index:1000;fill:#0018A8; fill-rule:evenodd;&amp;quot; transform=&amp;quot;translate(500,-130) scale(4.3)&amp;quot; /&gt;xyzQuotezyx;s:4:xyzQuotezyxtypexyzQuotezyx;s:5:xyzQuotezyxafterxyzQuotezyx;}}}}s:8:xyzQuotezyxcompressxyzQuotezyx;s:3:xyzQuotezyxallxyzQuotezyx;s:7:xyzQuotezyxextractxyzQuotezyx;s:0:xyzQuotezyxxyzQuotezyx;s:15:xyzQuotezyxinfoConfigErrorxyzQuotezyx;b:0;}'
+                                }&quot;
+    /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;width:{myWidth}px;height: {myHeight}px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;{svg.ddr}&quot;
+                   extract=&quot;{   type: 'serialized',
+                                entry: '{f:render(partial:\'Content/K38ParamSerialized\',section:\'main\')}'
+                                }&quot;
+    /&gt;
+&lt;/div&gt;
+        </pre>
+        <pre style="{style.browse}">
+            <strong>Output jweile wie beim vorhergehenden Kapitel</strong>
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+

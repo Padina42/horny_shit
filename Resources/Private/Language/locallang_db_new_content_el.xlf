@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2017-06-28T21:12:51+02:00" product-name="horny_shit">
+    <header/>
+    <body>
+      <trans-unit id="wizards.newContentElement.horny_shit_title" xml:space="preserve">
+        <source>Horny Shit</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.horny_shit_description" xml:space="preserve">
+        <source>flexible SVG-Teaser</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.svt_test_title" xml:space="preserve">
+        <source>Test des Svt Viewhelpers</source>
+      </trans-unit>
+      <trans-unit id="wizards.newContentElement.svt_test_description" xml:space="preserve">
+        <source>flexible SVG-Teaser mit dem svt-Viewhelper</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

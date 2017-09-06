@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <h3>Hinweis: 1.</h3>
+        <div><strong> Die aktuelle Version 0.0.4 ist noch im Status EXPERIMENTELL. </strong><br />Das grundsätzliche Konzept
+            wird vermutlich erhalten bleiben, aber es fehlen noch ein Vielzahl von Tests für die einzelnen Funktionen der <em>svtService</em>-Klassen.
+            Bisher ist nur gegen das vorliegen Plugin mit seinen Fällen getestet worden.
+        </div>
+        <h3>Hinweis: 2.</h3>
+        <div>Die aktuelle Version 0.0.4 enthält zusätzlich den Berechnungsviewhelper &lt;hornyShit:calculate&gt;. Der ist
+            zahlreiche Tests abgesichert und sollte jeden beliebigen String entweder korrekt berechnen können oder
+            - falls freigeschaltet - eine Fehlermeldung geben. <br /><strong>Im Falle von Fehlern mir bitte eine Mail (info@mobger.de) zusenden,
+            damit ich die Unittests erweitern kann. </strong> <br />Eine weitere Begrenzung ergibt sich aus den
+            Zahlenraum, in welchen PHP seine Berechnungen ausführen kann.
+            Ich habe nie ausgetestet, was bei zu großen oder zu kleinen Zahlen passiert.
+            <strong>Der Mailaufruf gilt auch, wenn wichtige unitäre oder binäre Operatoren fehlen. Bitte begründen.</strong>
+        </div>
+        <h3>Hinweis: 3.</h3>
+        <div>Das Plugin der aktuelle Version 0.0.4 ist nur provisorisch. Es enthält logische Brüche und didaktische Ungereimtheiten.
+            Sorry, aber im Moment erscheint mir Testen noch wichtiger als didaktisches Refactoring.
+        </div>
+        <h3>Hinweis: 4.</h3>
+        <div>Die Angaben in Kapitel 5.x stimmen noch nicht mit der neuen Struktur überein. Sie werden zeitnah nachgepflegt.
+            <em>Das Placeholder-Konzept ist noch nicht integriert.</em>
+        </div>
+    </div>
+</f:section>
+</body>
+</html>
+
+

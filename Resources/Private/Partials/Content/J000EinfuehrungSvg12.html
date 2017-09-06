@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <p>Bei einem Tortendiagramm muss man normalerweise einwenig rechnen, damit
+                die einzelnen Tortenstücke sich nicht überlappern oder überdecken. Ich hatt einige Zeit mein Kämpfen mit
+                der Rotation der Tortenstücke, weil im SVG die Rotation im Uhrzeiger-Sinn erfolgt. Damit werden Gewohnheiten zu
+                trigonometrischen Berechnungen etwas hinderlich. Es mich einiges an Umdenkarbeit gekostet, bis ich verstanden habe,
+                dass im SVG das Koordinatensystem im Vergleich zum normalen Koorddinaten-System an der x-Achse gespiegelt ist.
+                Dies erklärt die Drehung der Winkel uim Urzeigersind, auch die merkwürdig anmutende Berechnug im TYPO3-Template.
+            </p>
+        </div>
+        <div>
+            <f:alias map="{ prefix: 'dummy' }" >
+                <f:alias map="{ list: {
+                                         first: { sizeAngle: '30', rotate: '0', old:'zero', color:'darkred' },
+                                         second: { sizeAngle: '65', rotate: '-30', old:'first', color:'darkblue' },
+                                         third: { sizeAngle: '27', rotate: '-95', old:'second', color:'gold' }
+                                       }
+                                   }"
+                >
+                    <svg height="auto" width="100%" viewBox="-400 -400 800 800" >
+                        <defs>
+                            <f:for each="{list}" key="nameId" as="item">
+                                <path id="{nameId}"
+                                      d=" M 0 0
+                                        l 150,0
+                                        A 150,150 0 0,0 {hornyShit:calculate(value:'150*cos({item.sizeAngle}°)')},{hornyShit:calculate(value:'-150*sin({item.sizeAngle}°)')}
+                                        z"
+                                      fill="{item.color}" stroke="black" stroke-width="2" stroke-linejoin="round" />
+                            </f:for>
+                        </defs>
+
+                        <g id="torte">
+                            <circle cx="0" cy="0" r="150" style="fill:green;stroke:darkblue;"/>
+                            <f:for each="{list}" key="nameId" as="item">
+                                <g class="{nameId}">
+                                    <use x="0" y="0" xlink:href="#{nameId}" id="{prefix}{nameId}" transform="rotate({item.rotate}) "/>
+                                </g>
+                            </f:for>
+                        </g>
+                        <use x="200" y="200" xlink:href="#torte" />
+                    </svg>
+                </f:alias>
+            </f:alias>
+
+        </div>
+        <div>
+            <h4>Nachbemerkung</h4>
+            <p>
+                Die aktuelle Version ist für mich eine Spielversion. Der obige Vorschlag ist noch nicht ideal, um
+                ein Template für dynamisch generierte SVG-Diagrasmme zu bekommen. Insbesondere ein Mechanismus zur
+                Summation über alle einzutrageneden Werte fehlt noch, um so zum Beispiel schnell ein vollständig gefülltes
+                SVG-Kreisdiagramme dynamisch erzeugen zu können.
+            </p>
+            <p>
+                Auf den erstenblick könnte man glauben, dass die VHS-Viewhelper zur Summation ausreichen würden, aber der Blick auf
+                den Parameter <em>{item.rotate}</em>, dass man während des Renderns vermutlich ein verallgemeinerte
+                Register-Konzept braucht - also ein Konzept zur lokalen Speicherung und Anpassung von Variablen.
+                Aktuell wird ein Register-Konzept erprobt.
+            </p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+&lt;f:alias map=&quot;&#123; prefix: 'dummy' &#125;&quot; &gt;
+    &lt;f:alias map=&quot;&#123; list: &#123;
+                             first: &#123; sizeAngle: '30', rotate: '0', old:'zero', color:'darkred' &#125;,
+                             second: &#123; sizeAngle: '65', rotate: '-30', old:'first', color:'darkblue' &#125;,
+                             third: &#123; sizeAngle: '27', rotate: '-95', old:'second', color:'gold' &#125;
+                           &#125;
+                       &#125;&quot;
+    &gt;
+        &lt;svg height=&quot;auto&quot; width=&quot;100%&quot; viewBox=&quot;-400 -400 800 800&quot; &gt;
+            &lt;defs&gt;
+                &lt;f:for each=&quot;&#123;list&#125;&quot; key=&quot;nameId&quot; as=&quot;item&quot;&gt;
+                    &lt;path id=&quot;&#123;nameId&#125;&quot;
+                          d=&quot; M 0 0
+                            l 150,0
+                            A 150,150 0 0,0 &#123;hornyShit:calculate(value:'150*cos(&#123;item.sizeAngle&#125;&deg;)')&#125;,&#123;hornyShit:calculate(value:'-150*sin(&#123;item.sizeAngle&#125;&deg;)')&#125;
+                            z&quot;
+                          fill=&quot;&#123;item.color&#125;&quot; stroke=&quot;black&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot; /&gt;
+                &lt;/f:for&gt;
+            &lt;/defs&gt;
+
+            &lt;g id=&quot;torte&quot;&gt;
+                &lt;circle cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;150&quot; style=&quot;fill:green;stroke:darkblue;&quot;/&gt;
+                &lt;f:for each=&quot;&#123;list&#125;&quot; key=&quot;nameId&quot; as=&quot;item&quot;&gt;
+                    &lt;g class=&quot;&#123;nameId&#125;&quot;&gt;
+                        &lt;use x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#&#123;nameId&#125;&quot; id=&quot;&#123;prefix&#125;&#123;nameId&#125;&quot; transform=&quot;rotate(&#123;item.rotate&#125;) &quot;/&gt;
+                    &lt;/g&gt;
+                &lt;/f:for&gt;
+            &lt;/g&gt;
+            &lt;use x=&quot;200&quot; y=&quot;200&quot; xlink:href=&quot;#torte&quot; /&gt;
+        &lt;/svg&gt;
+    &lt;/f:alias&gt;
+&lt;/f:alias&gt;
+        </pre>
+        <pre style="{style.browse}">
+&lt;svg height=&quot;auto&quot; width=&quot;100%&quot; viewBox=&quot;-400 -400 800 800&quot;&gt;
+    &lt;defs&gt;
+        &lt;path id=&quot;first&quot; d=&quot; M 0 0 l 150,0 A 150,150 0 0,0 129.90381056767,-75 z&quot; fill=&quot;darkred&quot; stroke=&quot;black&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;&gt;
+            &lt;path id=&quot;second&quot; d=&quot; M 0 0 l 150,0 A 150,150 0 0,0 63.392739261105,-135.9461680555 z&quot; fill=&quot;darkblue&quot; stroke=&quot;black&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;&gt;
+                &lt;path id=&quot;third&quot; d=&quot; M 0 0 l 150,0 A 150,150 0 0,0 133.65097862826,-68.098574960932 z&quot; fill=&quot;gold&quot; stroke=&quot;black&quot; stroke-width=&quot;2&quot; stroke-linejoin=&quot;round&quot;&gt;
+    &lt;/defs&gt;
+    &lt;g id=&quot;torte&quot;&gt;
+        &lt;circle cx=&quot;0&quot; cy=&quot;0&quot; r=&quot;150&quot; style=&quot;fill:green;stroke:darkblue;&quot;&gt;
+            &lt;g class=&quot;first&quot;&gt;
+                &lt;use id=&quot;dummyfirst&quot; x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#first&quot; transform=&quot;rotate(0) &quot;&gt;
+            &lt;/g&gt;
+            &lt;g class=&quot;second&quot;&gt;
+                &lt;use id=&quot;dummysecond&quot; x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#second&quot; transform=&quot;rotate(-30) &quot;&gt;
+            &lt;/g&gt;
+            &lt;g class=&quot;third&quot;&gt;
+                &lt;use id=&quot;dummythird&quot; x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#third&quot; transform=&quot;rotate(-95) &quot;&gt;
+            &lt;/g&gt;
+    &lt;/g&gt;
+    &lt;use x=&quot;200&quot; y=&quot;200&quot; xlink:href=&quot;#torte&quot;&gt;
+&lt;/svg&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+
+

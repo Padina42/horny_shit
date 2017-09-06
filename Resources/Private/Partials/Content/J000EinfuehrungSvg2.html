@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <h5>Der Kreis</h5>
+        <p>Bezugspunkt ist das Zentrum des Kreises. <br />Ein Teil des Kreises ragt aus der viewBox heraus.
+            (!!! SVG reagiert sensibel auf Groß- &amp; Kleinschreibung)</p>
+        <h5>Die Ellipse als Verallgemeinerung des Kreises</h5>
+        <p>Statt einem Radius muss man natürlich zwei Radien angeben. und damit die Ellipsen voll passen, startet die
+            linke obere Ecke der Viewbox nicht bei 0.0 wurde. :-) </p>
+        <h5>Das Path-Object</h5>
+        <p>Natürlich kann man die Ellipsen auch mit dem <em>path</em>-Tag generieren. Die relative 'a' bzw. absolute 'A'
+            Anweisung ist die Parameterreichste aller Pfad-Funktionen. <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d">
+                Bei Mozilla</a> findem man die Kurzformel <em>"A rx,ry xAxisRotate LargeArcFlag,SweepFlag x,y"</em>,
+            wobei das kommaseparierte Paar <em>rx,ry</em> die Radien definiert. Da ein Pfad beginnt
+            immer am aktuellen Punkt und endet im Punkt des kommaseparierten Paares <em>x,y</em>.
+            Der Parameter <em>xAxisRotate</em> beschreibt in Grad, wie
+            die Ellipse verdreht ist. die beiden anderen Parameter kennen nur die Werte 0 oder 1.
+            Hat <em>LargeArcFlag</em> den Wert 1,
+            wird der größere Kreisbogen verwendet, bei 0 der kleinere. Hat <em>SweepFlag</em> den Wert 0,
+            so ist das Zentrum der Ellipse rechts
+            vom Start-Ziel Vektor zu finden. Bei <em>SweepFlag</em>=1 ist de Zentrum links vom Start-Ziel-Vector zu finden.
+            (<a href="https://www.w3.org/TR/SVG/paths.html#InterfaceSVGPathSegArcAbs">Die gleichbedeutende Erklärung
+                mit den Winkeln</a> ist für Nicht-Mathematiker, Programmierer und Designer vermutlich eher schwerverständlich
+            und beschreibt das aktuelle Verhalten der Browser nicht korrekt.
+        <h5>Fehler in modernen Browsern</h5>
+        <p>Die etwas merkwürdig erscheindendde W3C-Definition für <em>SweepFlag</em>
+            <a href="https://www.w3.org/TR/SVG/paths.html#InterfaceSVGPathSegArcAbs">über die Winkel-Orientierung</a> erlaubt,
+            dass ein Arc-Pfad auch in seinem Startpunkt endet, da die definition auf auf einen richtungslosen Null-Vektor
+            anwendbar ist. In den real
+            existierenen, aktuellen (2017/08/20) Browsern Chrome [60], Firefox [55] und Microseft Edge [38/HTML14] werden
+            leider solche zu Null-Vektoren führenden Definitionen nicht berücksichtigt, wie der nichtangezeigte Kreis der ersten
+            Path-Definition zeigt. </p>
+    </div>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <svg viewBox="0 -300 2000 3400" width="100%" height="100%">
+                <circle  cx="-23" cy="-34" r="345" style="fill:transparent; stroke-width:1%; stroke:#5d5203;" />
+                <circle  cx="123" cy="234" r="345" style="fill:gold; stroke-width:1%; stroke:#5d5203;" />
+                <circle  cx="123" cy="234" r="135" style="fill:transparent; stroke-width:1%; stroke:#5d5203; file-rule:evenodd;" />
+
+                <ellipse  cx="1078" cy="389" rx="345" ry="567" style="fill:transparent; stroke-width:1%; stroke:#065461;" />
+                <ellipse  cx="1278" cy="789" rx="345" ry="567" style="fill:d0faa6; stroke-width:1%; stroke:#065461;" />
+                <ellipse  cx="1278" cy="789" rx="145" ry="367" style="fill:transparent; stroke-width:1%; stroke:#065461;" />
+                <!--
+                        468 = 123 + 345;
+                        199 = 345-(123+23)
+                -->
+                <path d="M 199 1956
+                         A 345,345 0 1,1 199,1956"    style="fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#000000;" />
+                <path d="M 199 1966
+                         A 345,345 0 1,1 199,1965"    style="fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#8e051b;" />
+                <path d="M 468 2234
+                         A 345,345 0 1,1 468,2233
+                         M 268 2234
+                         A 145,145 0 1,1 268,2233" style="fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;" />
+                <!--
+                        1423 = 1078 + 345;
+                        1623 = 1278 + 345;
+                        2789 = 2000 + 789
+                -->
+                <path d="M 1423 2389
+                         A 345,567 0 1,1 1423,2388"    style="fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#8e051b;" />
+                <path d="M 1623 2789
+                         A 345,567 0 1,1 1623,2788
+                         M 1423 2789
+                         A 145,367 0 1,1 1423,2788"    style="fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;" />
+            </svg>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+            &lt;svg viewBox=&quot;0 -300 2000 3400&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;
+                &lt;circle  cx=&quot;-23&quot; cy=&quot;-34&quot; r=&quot;345&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#5d5203;&quot; /&gt;
+                &lt;circle  cx=&quot;123&quot; cy=&quot;234&quot; r=&quot;345&quot; style=&quot;fill:gold; stroke-width:1%; stroke:#5d5203;&quot; /&gt;
+                &lt;circle  cx=&quot;123&quot; cy=&quot;234&quot; r=&quot;135&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#5d5203; file-rule:evenodd;&quot; /&gt;
+
+                &lt;ellipse  cx=&quot;1078&quot; cy=&quot;389&quot; rx=&quot;345&quot; ry=&quot;567&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#065461;&quot; /&gt;
+                &lt;ellipse  cx=&quot;1278&quot; cy=&quot;789&quot; rx=&quot;345&quot; ry=&quot;567&quot; style=&quot;fill:d0faa6; stroke-width:1%; stroke:#065461;&quot; /&gt;
+                &lt;ellipse  cx=&quot;1278&quot; cy=&quot;789&quot; rx=&quot;145&quot; ry=&quot;367&quot; style=&quot;fill:transparent; stroke-width:1%; stroke:#065461;&quot; /&gt;
+                &lt;!--
+                        468 = 123 + 345;
+                        199 = 345-(123+23)
+                --&gt;
+                &lt;path d=&quot;M 199 1956
+                         A 345,345 0 1,1 199,1956&quot;    style=&quot;fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#000000;&quot; /&gt;
+                &lt;path d=&quot;M 199 1966
+                         A 345,345 0 1,1 199,1965&quot;    style=&quot;fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+                &lt;path d=&quot;M 468 2234
+                         A 345,345 0 1,1 468,2233
+                         M 268 2234
+                         A 145,145 0 1,1 268,2233&quot; style=&quot;fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+                &lt;!--
+                        1423 = 1078 + 345;
+                        1623 = 1278 + 345;
+                        2789 = 2000 + 789
+                --&gt;
+                &lt;path d=&quot;M 1423 2389
+                         A 345,567 0 1,1 1423,2388&quot;    style=&quot;fill-rule: evenodd; fill:transparent; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+                &lt;path d=&quot;M 1623 2789
+                         A 345,567 0 1,1 1623,2788
+                         M 1423 2789
+                         A 145,367 0 1,1 1423,2788&quot;    style=&quot;fill-rule: evenodd; fill:#facdae; stroke-width:1%; stroke:#8e051b;&quot; /&gt;
+            &lt;/svg&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+
+

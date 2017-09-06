@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            Rechts finden Sie Code-Beispiele. Farblich wird zwischen TYPO3-Template und Browser-Code unterschieden.
+            In der vorliegenden Spalte
+            finden Sie kurze Erläuterungen, Beispiel-Bilder sowie <span style="color:#b35a00;">
+            die eine oder andere politisch-provokante Anmerkung in brauner Farbe</span>.
+            Die Extension heißt nicht umsonst 'geiler Scheiß' bzw. 'horny shit'.
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+Beispiel für Code im TYPO3/Fluid-Template
+        </pre>
+        <br />
+        <pre style="{style.browse}">
+Resultierender Code im Browser
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>

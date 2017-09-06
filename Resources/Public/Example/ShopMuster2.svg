@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210px"
+   height="297px"
+   style="background: linear-gradient(15deg, #f00, #ffa500, #ff0, #008000 35%, #00f, #800080);"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ShopMuster2.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="371.6198"
+     inkscape:cy="725.68207"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0"
+       id="path4136"
+       sodipodi:cx="408.57144"
+       sodipodi:cy="303.7908"
+       sodipodi:expansion="1.67"
+       sodipodi:revolution="2.5609801"
+       sodipodi:radius="360.40363"
+       sodipodi:argument="-14.130709"
+       sodipodi:t0="0.15854315"
+       d="m 417.74365,317.6692 c -6.74452,15.63793 -28.08431,14.81148 -40.09742,6.56003 -24.59207,-16.89157 -21.64736,-52.71367 -4.11883,-73.46327 29.56786,-35.00132 83.66339,-29.16398 114.69856,0.38128 46.84004,44.59138 37.37789,120.33791 -6.65193,163.10316 -61.81795,60.04249 -162.31987,46.27924 -218.17921,-14.51257 -74.54615,-81.12869 -55.85146,-209.29346 23.83647,-279.54577 102.42451,-90.296704 261.00752,-66.076824 346.89737,34.52829 107.24742,125.6218 76.93822,317.25535 -46.51274,419.98111 -87.11745,72.49199 -207.81827,94.2994 -315.93488,62.48369" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:70px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text4140"
+       sodipodi:linespacing="125%"
+       transform="translate(-2.8571424,114.28571)"><textPath
+         xlink:href="#path4136"
+         id="textPath4144"><tspan
+   id="tspan4142"
+   style="font-size:70px;fill:#ffcc00">Ihre Spende unterstützt das dynamische kreative Internet</tspan></textPath></text>
+    <image
+       transform="translate(-618,950)"
+       width="321.28561"
+       height="428.3808"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       id="image4155"
+       x="618.17181"
+       y="-326.35709"
+       xlink:href="/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg"
+       sodipodi:absref="/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:45px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#009900;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="368.57144"
+       y="989.50507"
+       id="text4173"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4175"
+         x="368.57144"
+         y="989.50507"
+         style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:180px;font-family:'AR DECODE';-inkscape-font-specification:'AR DECODE Thin';fill:#009900;">59,-€</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:45px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:tb-rl;fill:#0066cc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="345.71429"
+       y="666.64789"
+       id="text4177"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4179"
+         x="949.50507"
+         y="62.857155">Super</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:70px;line-height:125%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ee0000;fill-opacity:1;stroke:none;stroke-width:0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0;"
+       id="text4181"
+       sodipodi:linespacing="125%"
+       transform="matrix(-1,0,0,-1,756.34638,720.85182)"><textPath
+         xlink:href="#path4136"
+         startOffset="100%"
+         id="textPath4195"><tspan
+   style="font-size:70px;text-align:end;text-anchor:end;fill:#ee0000;fill-opacity:1;"
+   id="tspan4183">Mein Geschenk für dich</tspan></textPath></text>
+  </g>
+</svg>

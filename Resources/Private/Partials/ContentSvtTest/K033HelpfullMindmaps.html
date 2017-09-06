@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <p>Mind-Maps sind insbesondere in der Pädagogik beliebt, weil viele Erzieher, Populisten und Eltern
+                gern die Welt einfach über natürliche hierarchische Ordnungen erklären und/oder definieren wollen.
+                Mind-Maps bilden das autoritäre Denkmuster der Hierarchie
+                einfach und sinnbildlich durch Abzweigungen von einem Zentrum ab.
+            </p>
+            <p>Ihre Nutzung führt bei nicht-hierarchischen Konstrukten leicht zu Denkfehlern.
+                Als Beispiel seien rekursive oder
+                fraktale Probleme genannt, wie zum Beispiel die Ast-Dicke in Bäumen, die fraktale Struktur von agiler Planungsprozessen
+                oder die fraktale Struktur Bäumen. Im Webbereich scheitert ein hierarchisches Konzept
+                schnell bei der Visualisierung komplexerer Klick-Logiken für Frontend-Designs.
+            </p>
+            <p>
+                Aber ein assoziativer-Array ist per se eine hierarchisch geordnete Struktur. Es ist daher naheliegend,
+                eine Struktur wie den <a href="{f:uri.resource(path: '\typo3conf\ext\horny_shit\Documentation\Appendix\Configuration.mm')}" >Konfigurationsarray
+                des <em>svt</em>-Viewhelpers mit einer Mind-Map</a>  zu beschreiben. Mit Hilfe von Icons definiert man
+                den Datentyp des jeweiligen Eintrags und der Text beschreibt den Key im Konfigurations-Array. Im Idealfall lässt sich aus
+                dem Namen des Key schon auf seine Bedeutung schließen. Texte ohne Icon definieren entweder Schlüsselworte
+                oder sind als Kommentare zu lesen.
+            </p>
+            <p>Da ein Bild oft mehr als tausend Worte sagt, wird im weiteren
+                an Hand von kleinen Mind-Maps-Schnipsel gezeigt, wie das Mind-Map, die Konfigurationsarraystruktur und der
+                <em>svt</em>-Viewhelper miteinander in Beziehung stehen. Auch sollten die Beispiele zeigen,
+                wie das gesamte Mind-Map der Konfigurationsstruktur zu lesen ist.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div style="color:#b35a00;">
+            <p>
+                Die Dokumentation von TypoScript und TsConfig in TYPO3 oder die Konfuguration des neuen RTE-Editors
+                würde vielleicht übersichtlicher werden,
+                wenn die Datenstrukturen mit Mind-Maps beschreiben werden würde.
+                Nachteilig wäre vermutlich aber, wie im vorliegenden Text schone am Beispiel
+                des <em>extract</em>-Manipulators gezeigt wurde, dass das
+                rekursive Potential vom TypoScript so nicht wirklich gut dargestellt werden würde.
+            </p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+
+
+</f:section>
+</body>
+</html>

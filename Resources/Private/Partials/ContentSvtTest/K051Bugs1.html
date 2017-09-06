@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <svt:svt src="{svg.ddr}"
+                           rebuild="{   items: { 0: {   xPath: '/*',
+                                                        attribute: {0: {key:'width', new:'auto', unallowed: 'ups'},
+                                                                    1: {key:'height', new:'auto'},
+                                                                    2: {key:'preserveAspectRatio', new:'xMidYMid meet'},
+                                                                    3: {key:'viewBox', new:'0 0 1000 1600'}}
+                                                    },
+                                                1: {    xPath:'//*[@id=\'g1991\']',
+                                                        style: { type:'add', key:'display', new:'none'}
+                                                    }
+                                    }}"
+                           infoConfigError="true"
+            />
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+        </pre>
+        <pre style="{style.browse}">
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+

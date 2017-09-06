@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-05-15T08:21:53Z" product-name="horny_shit">
+		<header/>
+		<body>
+
+			<trans-unit id="general.title.">
+				<source>list of entries  (click to close)</source>
+				<target>list of entries (click to close)</target>
+			</trans-unit>
+			<trans-unit id="general.title.mistakes">
+				<source>list of mistakes (click to close)</source>
+				<target>list of mistakes (click to close)</target>
+			</trans-unit>
+			<trans-unit id="general.title.all">
+				<source>list of valiadtions (click to close)</source>
+				<target>list of valiadtions (click to close)</target>
+			</trans-unit>
+			<trans-unit id="param.validate.">
+				<source>Undefined translation-key for validation. Should not happen. Please inform the developer.</source>
+				<target>Undefined translation-key for validation. Should not happen. Please inform the developer.</target>
+			</trans-unit>
+
+
+			<!-- validation of parameter in StringReplaceService -->
+			<trans-unit id="param.validate.SvtServide.paramValidateValidationNotifyService">
+				<source>Reason of failure: The value of the optional flag for the information about configuration errors can not be interpreted as a boolean.</source>
+				<target>Reason of failure: The value of the optional flag for the information about configuration errors can not be interpreted as a boolean.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.SvtServide.paramValidateValidationOutputService">
+				<source>Reason of failure: The parameter for the switch of the output is not a string or it is empty or it contains not an item of the allowed keyword or the value ignores the cas-sensitivity.</source>
+				<target>Reason of failure: The parameter for the switch of the output is not a string or it is empty or it contains not an item of the allowed keyword or the value ignores the cas-sensitivity.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.SvtServide.paramValidateValidationInfoCalculateError">
+				<source>Reason of failure: The value of the optional flag for informations aboout calculationerrors can not be interpreted as a boolean.</source>
+				<target>Reason of failure: The value of the optional flag for informations aboout calculationerrors can not be interpreted as a boolean.</target>
+			</trans-unit>
+
+			<!-- validation of parameter in StringReplaceService -->
+			<trans-unit id="param.validate.StringReplaceService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.StringReplaceService.paramValidateSwitch">
+				<source>Reason of failure: The parameter contains not one of the estimated parameters and is not a array with only allowed parametersets.</source>
+				<target>Reason of failure: The parameter contains not one of the estimated parameters and is not a array with only allowed parametersets.</target>
+			</trans-unit>
+			<!-- error of checks in StringReplaceService -->
+			<trans-unit id="param.validate.StringReplaceService.reformateFreeParamFromHtmlCharCodes">
+				<source>Reason of failure: The tested item is not part of the switch-case-selection.</source>
+				<target>Reason of failure: The tested item is not part of the switch-case-selection.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.StringReplaceService.reformateFreeXmlStreamFromHtmlCharCodes">
+				<source>Reason of failure: The tested item is not part of the switch-case-selection.</source>
+				<target>Reason of failure: The tested item is not part of the switch-case-selection.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.StringReplaceService.reformateAddRegexParameterToSearchPart">
+				<source>Reason of failure: The tested item is not part of the switch-case-selection.</source>
+				<target>Reason of failure: The tested item is not part of the switch-case-selection.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.StringReplaceService.reformateSwitchMethodAfterParamPreparation">
+				<source>Reason of failure: The tested item is not part of the switch-case-selection. A default string-search-replace-action is performed.</source>
+				<target>Reason of failure: The tested item is not part of the switch-case-selection. A default string-search-replace-action is performed.</target>
+			</trans-unit>
+
+
+			<!-- validation of parameter in RemoveService -->
+			<trans-unit id="param.validate.RemoveService.paramValidate">
+				<source>Reason of failure: The parameter doubled items or contain undefinde items or contains items with the wrong type oder at least one optional item is missing.</source>
+				<target>Reason of failure: The parameter doubled items or contain undefinde items or contains items with the wrong type oder at least one optional item is missing.</target>
+			</trans-unit>
+
+
+			<!-- error of checks in RebuildService -->
+			<trans-unit id="param.validate.RebuildService.attributeRebuildDetailDoIt">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.childRebuildDetailDoIt">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.generalAttributeRebuildDetail">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.valueRebuildDetailActions">
+				<source>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.valueRebuildDetailDoIt">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.useRebuildDetailActions">
+				<source>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.useRebuildDetailDoIt">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.imageRebuildDetailActions">
+				<source>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.imageRebuildDetailDoIt">
+				<source>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</source>
+				<target>Reason of failure: the xPath-aparmeter cause a list with empty node or used an undefined typename. Unexpected error.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildService.itemRebuildProcess">
+				<source>Reason of failure: The generic method in compressService is not avaiable.</source>
+				<target>Reason of failure: The generic method in compressService is not avaiable.</target>
+			</trans-unit>
+
+
+			<!-- validation of parameter in NamespaceService -->
+			<trans-unit id="param.validate.NamespaceService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<!-- error of checks in NamespaceService -->
+			<trans-unit id="param.validate.NamespaceService.removeTagsWithNamespace">
+				<source>Reason of failure: The detected node has no parent-node - respectivly the root is a unallowed node.</source>
+				<target>Reason of failure: The detected node has no parent-node - respectivly the root is a unallowed node.</target>
+			</trans-unit>
+
+
+			<!-- validation of in ConfigService -->
+			<trans-unit id="param.validate.ConfigService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ConfigService.validateConfiguration">
+				<source>Reason of failure: One item of the array is not part of the checker-list.</source>
+				<target>Reason of failure: One item of the array is not part of the checker-list.</target>
+			</trans-unit>
+
+
+			<!-- validation of parameter in CompressService -->
+			<trans-unit id="param.validate.CompressService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<!-- error of checks in CompressService -->
+			<trans-unit id="param.validate.CompressService.compress">
+				<source>Reason of failure: The generic method in compressService is not avaiable.</source>
+				<target>Reason of failure: The generic method in compressService is not avaiable.</target>
+			</trans-unit>
+
+
+			<!-- error of checks in CheckService -->
+			<trans-unit id="param.validate.CheckService.hasOneValidSvgTag">
+				<source>Reason of failure: The xml has no svg-tag or more than one svg-tag or a misconfiguration of the svg-tag.</source>
+				<target>Reason of failure: The xml has no svg-tag or more than one svg-tag or a misconfiguration of the svg-tag.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.CheckService.hasOneDocumentEntity">
+				<source>Reason of failure: The xml-info-tag at the beginning is missing.</source>
+				<target>Reason of failure: The xml-info-tag at the beginning is missing.</target>
+			</trans-unit>
+
+			<!-- validation of parameter in CheckService -->
+			<trans-unit id="param.validate.CheckService.checkSpecification">
+				<source>Reason of failure: The flag for the type of testing is missing oder the validation of the stream itself failed.</source>
+				<target>Reason of failure: The flag for the type of testing is missing oder the validation of the stream itself failed.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.CheckService.validateSpecification">
+				<source>Reason of failure: The flag for the type of checking is not a string.</source>
+				<target>Reason of failure: The flag for the type of checking is not a string.</target>
+			</trans-unit>
+
+			<!-- usage in RebuildParamValidateService -->
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateStringNotEmpty">
+				<source>Reason of failure: The needed parameter is empty, is not a string or is not set.</source>
+				<target>Reason of failure: The needed parameter is empty, is not a string or is not set.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateStringOptionalExist">
+				<source>Reason of failure: The optional parameter is empty or not a string.</source>
+				<target>Reason of failure: The optional parameter is empty or not a string.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateIntegerNotEmpty">
+				<source>Reason of failure: The needed parameter is not set or is not interpretable as an integer.</source>
+				<target>Reason of failure: The needed parameter is not set or is not interpretable as an integer.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateIntegerOptionalExist">
+				<source>Reason of failure: The optional parameter is not interpretable as an integer.</source>
+				<target>Reason of failure: The optional parameter is not interpretable as an integer.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateArrayNotEmpty">
+				<source>Reason of failure: The needed parameter is not set, is not an array or is an empty array.</source>
+				<target>Reason of failure: The needed parameter is not set, is not an array or is an empty array.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateBooleanExist">
+				<source>Reason of failure: The needed parameter is not set or is not interpretable as a boolean.</source>
+				<target>Reason of failure: The needed parameter is not set or is not interpretable as a boolean.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateBooleanOptionalExist">
+				<source>Reason of failure: The optional parameter is not interpretable as a boolean.</source>
+				<target>Reason of failure: The optional parameter is not interpretable as a boolean.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateStringInTypeList">
+				<target>Reason of failure: The needed value or the list of allowed entries are not set,
+					are not strings. Or they are empty after triming or the value is not allowed.</target>
+				<source>Reason of failure: The needed value or the list of allowed entries are not set,
+					are not strings. Or they are empty after triming or the value is not allowed.</source>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateOptionalStringInTypeList">
+				<source>Reason of failure: The optional value or the list of allowed entries are not strings.
+					Or they are empty after triming or the value is not allowed.</source>
+				<target>Reason of failure: The optional value or the list of allowed entries are not strings.
+					Or they are empty after triming or the value is not allowed.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateArrayWithOptionalItemContainMoreThanStartItems">
+				<source>Reason of failure: There are not additional items in the parameter-array. The array counts
+					more than the needed and the used optional items on the current level.</source>
+				<target>Reason of failure: There are not additional items in the parameter-array. The array counts
+					more than the needed and the used optional items on the current level.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateArrayWithOptionalItemContainPredictedCountOfItems">
+				<source>Reason of failure: The count of array-item differ to the estimated number of items.</source>
+				<target>Reason of failure: The count of array-item differ to the estimated number of items.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedAttributeItem">
+				<source>Reason of failure: The array for the attribute-rebuild-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the attribute-rebuild-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedAttribute">
+				<source>Reason of failure: The needed array contains items, which are un- or misdefined for
+					the attribute-section. Or the array itself has un- or misdefined items for the attribute-section.
+					Or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The needed array contains items, which are un- or misdefined for
+					the attribute-section. Or the array itself has un- or misdefined items for the attribute-section.
+					Or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedAttributeOptional">
+				<source>Reason of failure: The optional array does not exist or it contains items, which are un-
+					or misdefined for the attribute-section. Or the array itself has un- or misdefined items for
+					the attribute-section. Or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The optional array does not exist or it contains items, which are un-
+					or misdefined for the attribute-section. Or the array itself has un- or misdefined items for
+					the attribute-section. Or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedChild">
+				<source>Reason of failure: The array for the child-rebuild-section has un- or misdefined items or the
+					estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the child-rebuild-section has un- or misdefined items or the
+					estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedClass">
+				<source>Reason of failure: The array for the class-rebuild-section has entries, which are not strings.
+					Or the estimated number of iterms differ to the predicted number. Or at least there is not
+					optinal item defined.</source>
+				<target>Reason of failure: The array for the class-rebuild-section has entries, which are not strings.
+					Or the estimated number of iterms differ to the predicted number. Or at least there is not
+					optinal item defined.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedImage">
+				<source>Reason of failure: The array for the image-rebuild-section has un- or misdefined items or
+					the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the image-rebuild-section has un- or misdefined items or
+					the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedStyle">
+				<source>Reason of failure: The array for the style-rebuild-section has un- or misdefined items or
+					the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the style-rebuild-section has un- or misdefined items or
+					the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedUse">
+				<source>Reason of failure: The array for the use-rebuild-section has un- or misdefined items
+					or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the use-rebuild-section has un- or misdefined items
+					or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckNamedValue">
+				<source>Reason of failure: The array for the value-rebuild-section has un- or misdefined items
+					or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the value-rebuild-section has un- or misdefined items
+					or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheckSwitchToNamedMethod">
+				<source>Reason of failure: This is an unexpected mistake. The estimatded method,
+					which name is generated, could not be found.</source>
+				<target>Reason of failure: This is an unexpected mistake. The estimatded method,
+					which name is generated, could not be found.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelCheck">
+				<source>Reason of failure: The namepart of a method is not a string,
+					or it is not empty or it does not exist.</source>
+				<target>Reason of failure: The namepart of a method is not a string,
+					or it is not empty or it does not exist.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateOneOfSecondLevelOfRebuild">
+				<source>Reason of failure: The iteration of the list of configurationsarrays does contain one
+					or more invalid section-entries. The method will normaly break after the first mistake.</source>
+				<target>Reason of failure: The iteration of the list of configurationsarrays does contain one
+					or more invalid section-entries. The method will normaly break after the first mistake.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateSecondLevelOfRebuild">
+				<source>Reason of failure: One or more parts of the rebuild-list will contain invalid
+					section-configuration or there are undefined entries included. The method will
+					normaly break after the first mistake.</source>
+				<target>Reason of failure: One or more parts of the rebuild-list will contain invalid
+					section-configuration or there are undefined entries included. The method will
+					normaly break after the first mistake.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateStartLevelOfRebuild">
+				<source>Reason of failure: The start-structure of the configuration contain some invalid
+					optional, which define work scope-wide parameters.</source>
+				<target>Reason of failure: The start-structure of the configuration contain some invalid
+					optional, which define work scope-wide parameters.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.RebuildParamValidateService.paramValidateXmlStringCorrectFormed">
+				<source>Reason of failure: The string the xml/svg is not correct formed.</source>
+				<target>Reason of failure: The string the xml/svg is not correct formed.</target>
+			</trans-unit>
+
+			<!-- error of checks in VariableService -->
+			<trans-unit id="param.validate.VariableService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.VariableService.paramValidateVariableItem">
+				<source>Reason of failure: The array for the variable-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the variable-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.VariableService.paramValidateStringNotEmpty">
+				<source>Reason of failure: The needed parameter is empty, is not a string or is not set.</source>
+				<target>Reason of failure: The needed parameter is empty, is not a string or is not set.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.VariableService.paramValidateArrayWithOptionalItemContainPredictedCountOfItems">
+				<source>Reason of failure: The count of array-item differ to the estimated number of items.</source>
+				<target>Reason of failure: The count of array-item differ to the estimated number of items.</target>
+			</trans-unit>
+
+			<!-- error of checks in ParameterService -->
+			<trans-unit id="param.validate.ParameterService.paramValidate">
+				<source>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</source>
+				<target>Reason of failure: The parameter is not an array or it is empty or it contains not all allowed needed items or it contains other than the optional allowed items or an error in the specified items occured.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateStringNotEmpty">
+				<source>Reason of failure: The needed parameter is empty, is not a string or is not set.</source>
+				<target>Reason of failure: The needed parameter is empty, is not a string or is not set.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateStringOptionalExist">
+				<source>Reason of failure: The optional parameter is empty or not a string.</source>
+				<target>Reason of failure: The optional parameter is empty or not a string.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateArrayWithOptionalItemContainPredictedCountOfItems">
+				<source>Reason of failure: The count of array-item differ to the estimated number of items.</source>
+				<target>Reason of failure: The count of array-item differ to the estimated number of items.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateRegister">
+				<source>Reason of failure: The array for the register-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the register-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateRegisterItem">
+				<source>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidatePlaceholder">
+				<source>Reason of failure: The array for the placeholder-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the placeholder-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidatePlaceholderItem">
+				<source>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateCalculate">
+				<source>Reason of failure: The array for the placeholder-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the placeholder-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+			<trans-unit id="param.validate.ParameterService.paramValidateCalculateItem">
+				<source>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</source>
+				<target>Reason of failure: The array for the register-parameter-section has un- or misdefined items or the estimated number of iterms differ to the predicted number.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <p>
+        Ich könnte hier jetzt weitermachen und wie alle anderen Tutorials alle weiteren SVG-Element vorstellen.
+        Aber die anderen Tutorials sind ausgefeilter und können das besser als ein Halbwissender wie ich. Hier ein paars Links,
+            die mir immer wieder mal aufgefallen sind: </p>
+        <ul>
+            <li><a href="https://www.mediaevent.de/tutorial/svg.html">Das nach meiner Kenntnis didaktische beste SVG Tutorial im Netz - didaktisch hervorragen reduziert</a></li>
+            <li><a href="https://developer.mozilla.org/de/docs/Web/SVG/Tutorial">Mozilla's Entwicklerseite - gut als Nachschlagewerk geeignet</a></li>
+            <li><a href="http://svg.tutorial.aptico.de/">Sehr systematisches und technisches Tutorial - habe oft auf halber Strecke die Lust verloren</a></li>
+            <li><a href="https://www.selfsvg.info/">Sehr ausführlich und optisch sehr akademisch</a></li>
+        </ul>
+        <h4>Eine Strategie für gut SVG-Teaser</h4>
+        <h5>Selbst-Verortung</h5>
+        <p><p>Ich bin kein Layouter, der mit einem Federstrich was schönes schafft oder eigenständig Icons entwicklen will.
+            Ich bin Techniker und bin froh, wenn ich morgen noch weiß, warum ich etwas gestern noch schön fand.</p>
+        <p>Es gibt zwei Bereiche, wo ich SVG als Markupsprache dem HTML oder dem Canvas vorziehen würde. Der eine Fall sind
+            Teaser, die quasi als Mini-Plakate Texte, Links und Bilder zu kompositionen zusammenfassen. Der zweite fall sind
+        Diagramme, wo sich selbstähnliche Strukturen wiederholen und die Schönheit in der Wiederholung von Strukturen liegt. Und
+            als Techniker gehöre ich natürlich zu den Faulen Menschen, und möchte mit möglichst wenig Lernen möglichst
+            viel erreichen.
+        </p>
+    </div>
+    <div style="{style.doc}" id="{partial.name}">
+        <h5>SVG-Strategie</h5>
+        <div>
+            <p>Schön ist, dass ich für meine Anwendungsfälle die bekannte PatternLab-Bau-Strategie (vom Atom übers  Molekül zum Template)
+                auch beim SVG analog anwenden kann und dabei nur gut eine Handvoll Tags brauche (siehe angedeutetes SVG rechts).</p>
+            <ul>
+                <li>
+                    <h6>wichtige SVG-Atome</h6>
+                    <ul>
+                        <li>&lt;image&gt; - Atom für Pixelbilder</li>
+                        <li>&lt;text&gt; &amp; &lt;textPath&gt; - Atome für Textdarstellung</li>
+                        <li>&lt;path&gt; - Atom für jede geometrische Form</li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Wichtige SVG-Atom-Container (Molekül)</h6>
+                    <ul>
+                        <li>&lt;symbol&gt; - gekapseltes Object mit eigenen viewport</li>
+                        <li>&lt;g&gt; - Gruppe von Objecten</li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Wichtige SVG-Molekülvorlagen-Container</h6>
+                    <ul>
+                        <li>&lt;defs&gt; - gekapseltes Object mit eigenen viewport</li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Wichtige SVG-Multiplikator (Guttenberg-Multiplikator)</h6>
+                    <ul>
+                        <li>&lt;use&gt; - kopiert Vorlaugen aus &lt;defs&gt; an beliebige Stellen</li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>Wichtige SVG-Attribute</h6>
+                    <ul>
+                        <li>viewBox - begrenzt die Anzeige bei &lt;svg&gt; und &lt;symbol&gt;</li>
+                        <li>stroke - färbt Ränder</li>
+                        <li>fill - färbt innere Flächen</li>
+                        <li>transform - dreht, verschiebt, vergrößert oder verkleinert Formen</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Natürlich gibt es viele Tags und Attribute mehr, die in speziellen Fällen definitv ihre Berechtigung haben.
+                Aber als einfach gestrickter Techniker denke ich, dass ich in den speziellen Fällen dann in die
+                Internet-Dokumentation schaue, wenn ich sie brauche, und sie ansonsten ignoriere. <br />
+                Zum Lernen gehört immer auch die Entscheidung, was Lernballast ist, der den Freaks vorbehalten bleiben sollte.
+            </p>
+            <h5>Styling</h5>
+            <div>CSS gilt auch für SVG. Die meisten Attribute der Einzelelement können auch über CSS-befehle in Klassen
+                definiert werden. Gemäß dem Prinzuip der Trennung von Layout und Funktion sollte mal alle optischen
+                Eigenschaften grundsätzlich über CSS definieren. <br />
+                - soweit es geht und die Browser-Hersteller keine S... gebaut haben .....<br />
+                Früher war ja der IE das Sorgenkind im Internet. Heute ist es der Apfel, den Eva vor der Vertreibung aus
+                dem Paradies angebissen liegen ließ, der oft für graue Haare beim Frontendler sorgt. (Liebe Gleichstellungsbeauftragte, ich
+                kann die Bibel nicht einfach umschreiben, um ....
+            </div>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+
+&lt;svg viewBox=&ldquo;...&ldquo;&gt;
+    &lt;defs&gt;
+        &lt;g id=&ldquo;g&ldquo;&gt;
+            &lt;path d=&ldquo;M..L..Q..A..Z&ldquo; /&gt;
+        &lt;/g&gt;
+        &lt;symbol id=&ldquo;s&ldquo; viewBox=&ldquo;...&ldquo;&gt;
+            &lt;image xlink:href=&ldquo;a.png&ldquo;  &gt;
+        &lt;/symbol&gt;
+    &lt;defs&gt;
+
+
+    &lt;use id=&ldquo;a&ldquo; xlink:href=&ldquo;g&ldquo; x=&ldquo;&ldquo; y=&ldquo;&ldquo; /&gt;
+    &lt;use xlink:href=&ldquo;da.svg#g&ldquo; /&gt;
+
+    &lt;text&gt;
+        &lt;textPath xlink:href=&ldquo;a&ldquo;&gt;
+            SVG erg&auml;nzt HTML
+        &lt;/textPath&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+
+

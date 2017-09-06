@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <div style="{style.doc}" id="{partial.name}">
+        <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+        <div>
+            <p>Eine zweite Möglichkeit, um die Angabe zur Weite im <em>svg</em>-Tag zu entfernen, bietet die Suchen-Ersetzen-Funktionalität.
+                Per Default stoppt der <em>svt</em>-Viewhelper nach
+                dem ersten Sucherfolg die aktuelle Suche-Ersetze-Manipulation.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}"
+                           prepare="{ 0: {  search: 'width=&quot;1000&quot; height=&quot;600&quot;',
+                                            replace: 'preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 1000 1600&quot;',
+                                            method: 'normal'
+                           }}"
+            />
+        </div>
+        <p>
+            Der Manipulator <em>prepare</em> unterscheidet bei der Option &quot;method&quot; zwischen <em>normal</em> und <em>regular</em>.  Damit wird
+            zwischen normaler Suche und Suche mit variablen Ausdrücken (reguläre Suche) unterschieden, wobei der eigentliche
+            Ausdruck generisch ist.</p>
+        <p>Das Postfix <em>NoCase</em>, also die Angabe <em>normalNoCase</em> ermöglicht
+            das Abschalten der Unterscheidung zwischen Groß- und Kleinschreibung für die lateinischen Buchstaben A-Z. (Die Groß-
+                und Kleinschreibung von Umlauten wie ä,ö oder ü wird nicht unterstützt. </p>
+        <p>Das Präfix <em>html</em>, also zum Beispiel in <em>htmlNormal</em>, wendet
+            die PHP-Funktion <em>html_entity_decode</em> auf Suchparameter und SVG an. Das dazu alternative Präfix <em>special</em>,
+            also zum Beispiel in <em>specialNormal</em>,   wendet die PHP-Funktion
+                <em>htmlspecialchars_decode</em> auf die definierten Suchparameter an. Die Anführungszeichen sowie das Hochkomma
+            können im Suchparametern so in der HTML-Codierung <em>&amp;quot;</em> bzw. <em>&amp;acute;</em> maskiert werden.</p>
+        <p>Für die Prä- und Postfixe gilt die lowerCamelCaseSchreibweise. </p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px;height: &#x7b;myHeight&#x7d;px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;&#x7b;svg.ddr&#x7d;&quot;
+                   prepare=&quot;&#x7b; 0: &#x7b;  search: 'width=&amp;quot;1000&amp;quot; height=&amp;quot;600&amp;quot;',
+                                    replace: 'preserveAspectRatio=&amp;quot;xMidYMid meet&amp;quot; viewBox=&amp;quot;0 0 1000 1600&amp;quot;',
+                                    method: 'normal'
+                   &#x7d;&#x7d;&quot;
+    /&gt;
+&lt;/div&gt;
+        </pre>
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmPrep}',width:'900')}" style="width:100%;height:auto;" />
+        </pre>
+        <pre style="{style.browse}">
+&lt;div style=&quot;width:150px;height: 120px; overflow: hidden;&quot;&gt;
+    &lt;svg xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+         version=&quot;1.0&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; viewBox=&quot;0 0 1000 1600&quot; id=&quot;svg4463&quot;
+    &gt;
+    <span style="color:#fefefe;">[...]</span>
+    &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+
+</f:section>
+</body>
+</html>

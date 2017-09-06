@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+        <div>
+            <p>Es gibt die folgenden <em>svt</em>-Manipulatoren des SVG-Codes, die in der nachfolgenden Reihenfolge abgearbeitet werden.</p>
+            <ol>
+                <li><p><em>checkSvg</em></p><p style="margin-left: 15px">checkt an Hand formaler Kriterien, ob ein SVG vorliegt</p></li>
+                <li><p><em>prepare</em></p><p style="margin-left: 15px">erlaubt normale und reguläre Suchen-Ersetze-Manipulationen auf String-Ebene</p></li>
+                <li><p><em>namespace</em></p><p style="margin-left: 15px">entfernt im XML überflüssige Angaben, die manche Programme zurücklassen - es werden im SVG nur die Angaben gelassen, die in der Liste des Manipulators aufgezählt sind.</p></li>
+                <li><p><em>remove</em></p><p style="margin-left: 15px">entfernt ohne die Möglichkeit der Unterscheidung in allen Knoten des SVG-Codes gefährliche Attribute wie zum Beispiel 'onload'</p></li>
+                <li><p><em>rebuild</em></p><p style="margin-left: 15px">manipuliert Attribute und Inhalte von SVG-Knoten, die man mit Hilfe von xPath bestimmen und/oder eingrenzen kann</p></li>
+                <li><p><em>workOver</em></p><p style="margin-left: 15px">erlaubt wie <em>prepare</em> die normale oder reguläre Suchen-Ersetze-Manipulationen auf String-Ebene</p> </li>
+                <li><p><em>compress</em></p><p style="margin-left: 15px">kennt verschiedene Modi zum Entfernen von Whitespaces (Leerzeichen, Tabs, Umbrüche).</p></li>
+            </ol>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+<img src="{f:uri.image(src:'{svg.mmMain}',width:'900')}" style="width:100%;height:auto;" />
+        </pre>
+        <pre style="{style.browse}"></pre>
+    </div>
+</f:section>
+</body>
+</html>

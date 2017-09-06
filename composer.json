@@ -1,0 +1,37 @@
+{
+  "name": "porth/horny_shit",
+  "type": "typo3-cms-extension",
+  "description": "extension with an example for the new svg-viewhelper in TYPO3",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "horny",
+    "shit",
+    "svg"
+  ],
+  "homepage": "http://mobger.de",
+  "authors": [
+    {
+      "name": "Dr. Dieter Porth",
+      "role": "Developer",
+      "homepage": "http://www.mobger.de"
+    }
+  ],
+  "require": {
+    "typo3/cms": "~8.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Porth\\HornyShit\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Porth\\HornyShit\\Tests\\": "Tests"
+    }
+  },
+  "replace": {
+    "horny_shit": "self.version",
+    "typo3-ter/horny_shit": "self.version"
+  }
+}

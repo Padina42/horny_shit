@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <h4>Bekenntnis</h4>
+        <div>Erst im Laufe der Beschäftigung mit dem svt-Viewheklper wart mir bewusst, dass neben Teasern auch Diagramme
+            ein bevorzugtes Anwendungsfeld für SVGs sind. DaDiagramme die Abhängigkeit von Daten zueinander darstellen,
+            braucht diese Darstellungsform oft einfache Berechnungen im View. Meist sind ei Berechungen einfach. Beim Tortendiagramm
+            ist der Größe der Tortenstücke zu berechnen oder beim Balkendiagramm die Diemnsion der Viewbox.
+            Diese Berechnungen kann man nach meinem Wissen nicht immer in CSS auslagern, weshalb für horny-Shit ein
+            Berechnungsviewhelper entwickelt wurde..
+        </div>
+        <h4><em>eval</em> ist böse</h4>
+        <div>
+            <p>Mit der Funktion <em>eval</em> bietet PHP ein Funktion zur Auswertung von berechnungen. Aber schon im Manual
+                zum PHP wird davor gewarnt, weil die Funktion jeden PHP-code auswertet. Da mir vorschwebte, dass man
+                einfach eine Berechnungsformel ausrechen löässt, kamen die vielen mathematischen Viewhelper der
+                <a href="https://fluidtypo3.org/viewhelpers/vhs/master.html">TYPO3-Extension VHS</a>
+                nicht wirklich in Betracht.
+            </p>
+        </div>
+        <h4>Selber-Machen macht Arbeit</h4>
+        <div>
+            <p>
+                Leider fand ich - vermutlich weil ich mit den 'falschen'Suchbegriffe suichte - keine PHP-Klasse, die das Rechnen von Strings unterstützte.
+                Deshalb entschloss ich mich notgedrungen, dieses eigentlich triviale Problem selbst zu programmieren.
+                Vorteilhaft und motivierend war, dass ich dabei meine Kenntnisse zu Unittests mit PHPUnit
+                vertiefen konnte.</p>
+        </div>
+        <h4>Regeln für <em>calculate</em></h4>
+
+        <div>
+            <div>Die entstandene Klasse bzw. der entstanden Viewhelper <em>calculate</em> unterstützt die üblichen Rechenregeln:
+
+                <ul>
+                    <li>Zahlwerte Ausdrücke werden zuerst in Teil-Berechnungen übersetzt.
+                        <ul>
+                            <li>12% => (12/100) </li>
+                            <li>12e15 => (12*10^15)</li>
+                            <li>12e-15 => (12*10^-15)</li>
+                            <li>12° => (12/180*<em>M_PI</em>)</li>
+                        </ul>
+                        wobei <em>M_PI</em> im PHP für die Konstante der Kreiszahl &pi; steht.
+                    </li>
+                    <li>Ausdrücke in Klammern sind immer zuerst auszurechen</li>
+                    <li>Unitäre Operatoren wie <em>sin</em>, <em>cos</em>, <em>tan</em>, <em>ln</em> und <em>log</em> binden stärker
+                        als jeder binäre Operatoren. Zusätzlich wurden auch die unitären Operatoren
+                        <em>abs</em>, <em>round</em>, <em>floor</em> und <em>ceil</em> zugelassen.<br />
+                        Unitäre Opertoren wie <a>!(<a href="https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik)">Fakultät</a>)</em>, <em>cot</em>, <em>sinh</em>, <em>cosh</em> , <em>tanh</em> und <em>coth</em>
+                        wurden bislang nicht integriert, weil dafür kein aus meiner Sicht kein Bedarf besteht.</li>
+                    <li>Bei den binären Operatoren gilt folgende aufsteigenden Bindungsreihenfolge:
+                        <ol>
+                            <li>↑ (Windows Tatsatur-Code: alt-24. Maximum-Operator gibt die größere von zwei Zahlen zurück. Zusätzlich)</li>
+                            <li>↓ (Windows Tatsatur-Code: alt-25. Minimum-Operator gibt die kleinere von zwei Zahlen zurück. Zusätzlich)</li>
+                            <li>+, - </li>
+                            <li>*, / </li>
+                            <li>\, div ( beide darstellungsvformen sind identisch. Division mit Ergebnis ohne Nachkommastellen)</li>
+                            <li>mod (Modulo - Restwert, berechenbar auch für rationale Zahlen. Das in vielen
+                                Programmiersprachen verwendete <em>%</em>em>-Zeichen kann hier nicht verwendet werden, weil hier
+                                das Zeichen <em>%</em> mit Blick auf den allgemeinen Gebrauch als Faktor 1/100 interpretiert ist.)</li>
+                            <li>^ (Potenzoperator. Beispiele: <br />4^2= 4 hoch 2 = 16; <br />16^0.5 = 2 hoch einhalb = zweite Wurzel von 16 = 4)</li>
+                        </ol>
+                        Der aus der Wahrscheinlichkeitsrechnung bekannte Binäre Operator  "n über k", der bei Berechnung
+                        der <a href="https://de.wikipedia.org/wiki/Binomialkoeffizient">Binomialkoeffizienten</a> gebraucht wird,
+                        wurde bislang nicht integriert. Ich sehe dafür derzeit keinen Anwendungsfall. Wenn ich ihn integrieren müsste,
+                        würde der Permutationsoperator stärker als der Potenzoperator binden, und Rechensymbol würde ich vermutlich
+                        die bislang in der Mathematik unbenutzte Raute/HashTag <em>#</em> verwenden.
+                    </li>
+                </ul>
+            </div>
+            <div>Die einzige Funktion aus der Math-Gruppe von VHS, die ich nicht umegesetzt habe, war der veiwhelper <em></em>avareage</em>,
+                der den Mittelwerts von eines Datenvectors/Arrays bestimmt.
+                Da ein Mittelwert die Beziehung zwischen vielen Zahlen herstellt, ist die Funktion kein echter unitärer oder
+                binärer Operator im eindiemensionalen Zahlenraum.  Solche Funktionen gehören aus meiner Sicht in den Bereich
+                der Vektor-Arithmetik, die durrch die lineare Algebra ausführlich theoretisch begründet wird.
+            </div>
+        </div>
+        <h4>Test Rechnung (manuell)</h4>
+        <div>
+            <p>sin(90°)
+            + cos(180°) * exp( ln(1) )
+            + log(100) /abs(-1)
+            + floor(-140%)
+            - ceil(-0.8) * round(-0.5)
+            + 5 \8 + 2^6 mod 2
+            + 13
+            </p>
+            <p>= 1
+                + -1*1
+                + 2/1
+                + -2
+                - 0*-1
+                + 0
+                + 64 %2
+                + 13</p>
+            <p>= 1
+                - 1
+                + 2
+                + -2
+                - 0
+                + 0
+                + 0
+                +13</p>
+            <p>= 13 </p>
+        </div>
+        <h4>Test Rechnung (automatisch)</h4>
+        <f:alias map="{calc : 'sin(90°)
+            + cos(180°) * exp( ln(1) )
+            + log(100) /abs(-1)
+            + floor(-140%)
+            - ceil(-0.8) * round(-0.5)
+            + 5 \ 8
+            + 2^6 mod 2
+            + 13'
+        }">
+            <p>
+                <strong>In funktionaler Fluid-Schreibweise</strong>
+            </p>
+            <div>
+                <div>{calc->f:format.raw()} = {calc->hornyShit:calculate()} (erwartet =13)</div>
+            </div>
+        </f:alias>
+        <h4>Test-Rechnung (automatisch, ohne Umbrüche)</h4>
+        <f:alias map="{calc : 'sin(90°) + cos(180°) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13'}">
+            <p>
+                <strong>In funktionaler Fluid-Schreibweise</strong>
+            </p>
+            <div>
+                <div>{calc->f:format.raw()} = {calc->hornyShit:calculate()} (erwartet =13)</div>
+            </div>
+
+            <div>
+                <strong>bzw. in tag-basierter Schreibweise mit Value als inkludiertes Kind</strong>
+                <div>
+                    <f:format.raw>{calc}</f:format.raw> = <hornyShit:calculate>{calc}</hornyShit:calculate> (erwartet =13)
+                </div>
+            </div>
+            <div>
+                <p>
+                    <strong>bzw. in <em>value</em>-basierter Schreibweise - also mit Attribut</strong>
+                </p>
+                <div>
+                    <f:format.raw value="{calc}" /> = <hornyShit:calculate value="{calc}" /> (erwartet =13)
+                </div>
+            </div>
+        </f:alias>
+        <h4>Test Rechnung mit Fehler und erlaubten Fehlerhinweis</h4>
+        <f:alias map="{calc : 'sin(90°)
+            + cos(180°) * exp( ln(1) )
+            + log(100) /abs(-1))
+            + floor(-140%)
+            - ceil(-0.8) * round(-0.5)
+            + 5 \ 8
+            + 2^6 mod 2
+            + 13',
+            calcTwo : 'sin(90°)
+            + cos(180°) * exp( ln(1) )
+            + (log(100) /abs(-1)
+            + floor(-140%)
+            - ceil(-0.8) * round(-0.5)
+            + 5 \ 8
+            + 2^6 mod 2
+            + 13'
+        }">
+            <p>
+                <strong>Fehlerhinweis okay</strong>
+            </p>
+            <div>
+                <hornyShit:calculate error="1">{calc}</hornyShit:calculate>
+            </div>
+            <p>
+                <strong>Fehlerhinweis zeigt nicht auf Fehlerursache (fehlende schließende Klammer bzw. öffnende Klammer zuviel)</strong>
+            </p>
+            <div>
+                <hornyShit:calculate error="1">{calcTwo}</hornyShit:calculate>
+            </div>
+        </f:alias>
+
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+        &lt;h4&gt;Test Rechnung (manuell)&lt;/h4&gt;
+        &lt;div&gt;
+            &lt;p&gt;sin(90&deg;)
+            + cos(180&deg;) * exp( ln(1) )
+            + log(100) /abs(-1)
+            + floor(-140%)
+            - ceil(-0.8) * round(-0.5)
+            + 5 \8 + 2^6 mod 2
+            + 13
+            &lt;/p&gt;
+            &lt;p&gt;= 1
+                + -1*1
+                + 2/1
+                + -2
+                - 0*-1
+                + 0
+                + 64 %2
+                + 13&lt;/p&gt;
+            &lt;p&gt;= 1
+                - 1
+                + 2
+                + -2
+                - 0
+                + 0
+                + 0
+                +13&lt;/p&gt;
+            &lt;p&gt;= 13 &lt;/p&gt;
+        &lt;/div&gt;
+&lt;h4&gt;Test Rechnung (automatisch)&lt;/h4&gt;
+&lt;f:alias map=&quot;{calc : 'sin(90&deg;)
+    + cos(180&deg;) * exp( ln(1) )
+    + log(100) /abs(-1)
+    + floor(-140%)
+    - ceil(-0.8) * round(-0.5)
+    + 5 \ 8
+    + 2^6 mod 2
+    + 13'
+}&quot;&gt;
+    &lt;p&gt;
+        &lt;strong&gt;In funktionaler Fluid-Schreibweise&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;div&gt;
+        &lt;div&gt;{calc-&gt;f:format.raw()} = {calc-&gt;hornyShit:calculate()} (erwartet =13)&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/f:alias&gt;
+&lt;h4&gt;Test-Rechnung (automatisch, ohne Umbr&uuml;che)&lt;/h4&gt;
+&lt;f:alias map=&quot;{calc : 'sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13'}&quot;&gt;
+    &lt;p&gt;
+        &lt;strong&gt;In funktionaler Fluid-Schreibweise&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;div&gt;
+        &lt;div&gt;{calc-&gt;f:format.raw()} = {calc-&gt;hornyShit:calculate()} (erwartet =13)&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;strong&gt;bzw. in tag-basierter Schreibweise mit Value als inkludiertes Kind&lt;/strong&gt;
+        &lt;div&gt;
+            &lt;f:format.raw&gt;{calc}&lt;/f:format.raw&gt; = &lt;hornyShit:calculate&gt;{calc}&lt;/hornyShit:calculate&gt; (erwartet =13)
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;p&gt;
+            &lt;strong&gt;bzw. in &lt;em&gt;value&lt;/em&gt;-basierter Schreibweise - also mit Attribut&lt;/strong&gt;
+        &lt;/p&gt;
+        &lt;div&gt;
+            &lt;f:format.raw value=&quot;{calc}&quot; /&gt; = &lt;hornyShit:calculate value=&quot;{calc}&quot; /&gt; (erwartet =13)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/f:alias&gt;
+        </pre>
+        <pre style="{style.browse}">
+&lt;h4&gt;Test Rechnung (manuell)&lt;/h4&gt;
+&lt;div&gt;
+    &lt;p&gt;sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \8 + 2^6 mod 2 + 13 &lt;/p&gt;
+    &lt;p&gt;= 1 + -1*1 + 2/1 + -2 - 0*-1 + 0 + 64 %2 + 13&lt;/p&gt;
+    &lt;p&gt;= 1 - 1 + 2 + -2 - 0 + 0 + 0 +13&lt;/p&gt;
+    &lt;p&gt;= 13 &lt;/p&gt;
+&lt;/div&gt;
+&lt;h4&gt;Test Rechnung (automatisch)&lt;/h4&gt;
+&lt;p&gt;
+    &lt;strong&gt;In funktionaler Fluid-Schreibweise&lt;/strong&gt;
+&lt;/p&gt;
+&lt;div&gt;
+    &lt;div&gt;sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13 = (erwartet =13)&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;Test-Rechnung (automatisch, ohne Umbr&uuml;che)&lt;/h4&gt;
+&lt;p&gt;
+    &lt;strong&gt;In funktionaler Fluid-Schreibweise&lt;/strong&gt;
+&lt;/p&gt;
+&lt;div&gt;
+    &lt;div&gt;sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13 = (erwartet =13)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;strong&gt;bzw. in tag-basierter Schreibweise mit Value als inkludiertes Kind&lt;/strong&gt;
+    &lt;div&gt; sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13 = (erwartet =13) &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;p&gt;
+        &lt;strong&gt;
+            bzw. in
+            &lt;em&gt;value&lt;/em&gt;
+            -basierter Schreibweise - also mit Attribut
+        &lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;div&gt; sin(90&deg;) + cos(180&deg;) * exp( ln(1) ) + log(100) /abs(-1) + floor(-140%) - ceil(-0.8) * round(-0.5) + 5 \ 8 + 2^6 mod 2 + 13 = (erwartet =13) &lt;/div&gt;
+&lt;/div&gt;
+
+        </pre>
+
+    </div>
+</f:section>
+</body>
+</html>
+
+

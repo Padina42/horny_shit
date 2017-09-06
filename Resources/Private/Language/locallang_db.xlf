@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2017-06-28T21:12:51+02:00" product-name="horny_shit">
+    <header/>
+    <body>
+      <trans-unit id="tt_content.CType.div._hornyshit_" xml:space="preserve">
+        <source>horny_shit</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.div._svttest_" xml:space="preserve">
+        <source>svt_test</source>
+      </trans-unit>
+      <trans-unit id="config.hornyShit.activeDevelopmentEnvironment" xml:space="preserve">
+        <source>Activate learning-environment: The plugin contains special examples and informations in german language, how you can use the viewhelper. You won't use it in production. It contains only lerning-matirial, which you don't want normally show to your audience.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

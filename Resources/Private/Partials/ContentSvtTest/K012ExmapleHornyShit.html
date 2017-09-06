@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <p>Interaktiver &amp; dynamischer aber genauso einfach wird der SVG-Code dank des <em>svt</em>-Viewehlpers ins normale HTML eingebaut.</p>
+        <p style="width:{myWidth}px;height: auto; overflow: hidden;">
+            <svt:svt src="{svg.original}" />
+        </p>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+&lt;div style=&quot;width:{myWidth}px;height: auto; overflow: hidden;&quot;&gt;
+    &lt;svt:svt src=&quot;{svg.original}&quot; /&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+    <div style="{style.doc}">
+        <p>Boaaaah.... wahrhaftig geiler Scheiß (engl.: horny shit - laut google)!</p>
+    </div>
+    <div style="{style.pre}">
+    </div>
+    <div style="{style.doc}">
+        <p>Der <em>svt</em>-Viewhelper macht in TYPO3 daraus natürlich den SVG-Code in Rot. [...] zeigt, dass der Code natürlich umfangreicher ist. </p>
+            <p>Aus Übersichtsgründen wurde viel Code ausgelassen. Nutzen Sie zum Beispiel Firebug oder die Entwicklertools Ihres Browsers, um sich den generierten Frontend-Code anzuschauen.
+        </p>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.browse}">
+&lt;div style=&quot;width:150px;height: auto; overflow: hidden;&quot;&gt;
+    &lt;svg id=&quot;svg_horny_shit_extension&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:cc <span style="color:#fefefe;">[...]</span>&gt;
+        &lt;defs id=&quot;defs7121&quot;&gt;
+        <span style="color:#fefefe;">[...]</span> &lt;/g&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>

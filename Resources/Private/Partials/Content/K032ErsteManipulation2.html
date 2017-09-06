@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div><p>Der in das HTML eingebettete SVG-Code verhält sich nicht wie ein <em>img</em>-Tag. Für einen ersten Versuch
+            wurde der <em>hornyShit::svt</em>-Viewhelper wie der <em>f:image</em>-Viewhelper eingesetzt und nicht optimiert.
+            Weil im originalen SVG die Bilddefinition in Pixeln viel größer ist
+            als das Bild im <em>div</em>-Container in Pixeln sein darf, und weil
+            der <em>div</em>-Container per CSS-Style
+            auf <em>overflow:hidden</em> gesetzt wurde,
+            wird nur ein Teil der DDR-Flagge gezeigt.
+            Aktuell sehen sie hier nur eine Schwarzes Rechteck aus der linken oberen Ecke der Flagge.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div style="width:{myWidth}px;height: {myHeight}px; overflow: hidden;">
+            <hornyShit:svt src="{svg.ddr}" />
+        </div>
+        <div style="color:#b35a00;">
+            <h5>Ein bissChen politischer <em>Horny Shit</em></h5>
+            <p>Ähnliche Farben sahen am 9. November 1989 wohl auch die Funktionäre der DDR,
+                als sie die Strategie zur Übernahme der BRD aufgaben und die DDR-Bewohner frei ließen.
+                Plötzlich trabierte eine Zweitakter-Invasion durch Westdeutschland & Europa und die Verkaufsverhandlungen
+                zur Übernahme der DDR begannen.</p>
+            <p>Im Vergleich zur Dieselabluft im heutigen Jahr 2017 stank
+                es damals wirklich in den Städten nach Zweitakter-Öl; - aber alle freuten sich.
+                Wiedervereinigung und Politik waren damals wichtiger als individuelle Gesundheit.
+                Heute, wo Gen-Lebensmittel unter dem Schutz der Regierung die gesunde Ernährung
+                ersetzen darf,  wird die effiziente Diesel-Technik geopfert,
+                um dem Elektro-Auto zum Durchbruch
+                zu verhelfen. Ein Umbau auf eine regionalisierte Elektro-Fahrrad-Wirtschaft ist mit
+                Politikern der heutigen Parteien kaum denkbar, weil dasTheme Endzeit des Öls tabuisiert ist.
+                Wie beim Klimawandel wird eine richtige Aktion mit falschen
+                Argumenten begründet, was letztendlich aber zu einer falschen Politik führen wird. </p>
+                <p>
+                Der Rückgang der weltweiten Erdölproduktion (Peak of Oil-These) ist absehbar.
+                Individuelle Mobilität und die globalisierte  Wirtschaft der Arbeitsteilung
+            ist nicht mehr aufzuhalten. Ich rechne in zehn bis zwanzig Jahren mit
+                    immer mehr regionalen Hungerkrisen,
+            mit Euro-Dollar-Finanzkrise,
+            mit Bürgerkriegen und auch mit einem Hunger-Welt-Krieg. Das aktuelle Erblühen von Diktaturen
+            (USA, Venezuela, Türkei, Polen, Russland, ...) und die Autarkiebestrebungen
+                    (Brexit, Tibeter, Palästinenser, Tschetschenien, Republik Krim, ... ) könnten erste unbewusste Krisenzeichen für den
+            kommenden politischen Wechsel sein - der Zeitgeist 2017 hat nach meinem
+                    Eindruck viel Ähnlichkeit mit dem Zeitgeist aus Jahren um 1928.
+                </p>
+        <p>Ich weiß nicht, was ich von meinen Gedanken halten soll, weil
+            es keine Diskussion über dieses Tabu-Thema gibt:
+            <strong><em>Wie lange kann die globalisierte Öl-Wirtschaft die Menschheit noch ernähren?</em></strong>
+            </p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">&lt;div style=&quot;width:&#x7b;myWidth&#x7d;px;height: &#x7b;myHeight&#x7d;px; overflow: hidden;&quot;&gt;
+    &lt;hornyShit:svt src=&quot;&#x7b;svg.ddr&#x7d;&quot; /&gt;
+&lt;/div&gt;</pre>
+        <pre style="{style.browse}">&lt;div style=&quot;width:150px;height: 120px; overflow: hidden;&quot;&gt;
+            &lt;!--?xml version=&quot;1.0&quot;?--&gt;
+    &lt;svg xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:svg=&quot;http://www.w3.org/2000/svg&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+         version=&quot;1.0&quot; width=&quot;1000&quot; height=&quot;600&quot; id=&quot;svg4463&quot;
+    &gt;
+        <span style="color:#fefefe;">[...]</span>
+    &lt;/svg&gt;
+&lt;/div&gt;</pre>
+    </div>
+</f:section>
+</body>
+</html>

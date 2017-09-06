@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()} </h{partial.hNr}>
+    <f:alias map="{ shopWidth:  '45%',
+                    shopHeight: 'auto',
+                    myShopList: { 0: {  pattern: '/typo3conf/ext/horny_shit/Resources/Public/Example/ShopMuster.svg',
+                                        title: 'Mein erster Shop',
+                                        width: '45%',
+                                        text: ''},
+                                  1: {  pattern: '/typo3conf/ext/horny_shit/Resources/Public/Example/ShopMuster2.svg',
+                                        title: 'Mein umgebauter Kompakt-Shop',
+                                        width: '18%',
+                                        text: 'Nur das SVG-Template und die prozentruale Div-Breite wurde ausgetauscht und schon hat man ein neues Shop-Gefühl.'}
+                                }
+                    }"
+    >
+        <f:for each="{myShopList}" as="myShop">
+            <div style="padding:1%;clear:both; width:100%;"  id="{partial.name}">
+                <h2 style="width: 100%;clear:both;">{myShop.title}</h2>
+                <div style="width: 100%;clear:both;">{myShop.text}</div>
+                <div style="padding:1%;;clear:both;  width:100%; height:auto; float:left;">
+                    <f:alias map="{ shop: {    0: { preis: '59,-€', rot: '15', super: 'super', slogan: 'Mein Angebot an dich',
+                                                     subtitle: 'Ihr Auftrag unterstützt das dynamische Kreativ-Internet',
+                                                     path: '/typo3conf/ext/horny_shit/Resources/Public/Example/Kaffeepause.jpg'},
+                                               1: { preis: '69,-€', rot: '355', super: 'toll ', slogan: ' Lass Farbe sprechen  ',
+                                                     subtitle: '  Gönnen Sie Ihrem Shop mal einen Blickfang :-) oder zwei',
+                                                     path: '/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg'},
+                                               2: { preis: '99,-€', rot: '5', super: 'schön', slogan: 'Weihnachten ist bald! ',
+                                                     subtitle: 'Mal etwas Besonderes für Ihren Geschäftsfreund',
+                                                     path: '/typo3conf/ext/horny_shit/Resources/Public/Example/ZumVerschenken.jpg'},
+                                               3: { preis: '59,-€', rot: '35', super: 'geil ', slogan: 'horny shit Boni',
+                                                     subtitle: 'Fördern wollen - soziale Gerechtigkeit statt christliche Kälte',
+                                                     path: '/typo3conf/ext/horny_shit/Resources/Public/Example/FarbeImLeben.jpg'}
+                                                    }}"
+                    >
+                        <f:for each="{shop}" as="shopItem">
+                            <div style="width:{myShop.width}; height:auto; overflow: hidden;padding:1%; float:left;">
+                                <hornyShit:svt src="{myShop.pattern}"
+                                               prepare="{ 0: {  search: '59,-€',
+                                                                replace: '{shopItem.preis}',
+                                                                method: 'normal'},
+                                                          1: {  search: 'Super',
+                                                                replace: '{shopItem.super}',
+                                                                method: 'normal'},
+                                                          2: {  search: 'Mein Geschenk für dich',
+                                                                replace: '{shopItem.slogan}',
+                                                                method: 'normal'},
+                                                          3: {  search: 'Ihre Spende unterstützt das dynamische kreative Internet',
+                                                                replace: '{shopItem.subtitle}',
+                                                                method: 'normal'},
+                                                          4: {  search: '/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg',
+                                                                replace: '{shopItem.path}',
+                                                                method: 'normal'},
+                                                          5: {  search: '(42536 ',
+                                                                replace: '({shopItem.rot} ',
+                                                                method: 'normal'}
+                                                            }"
+                                               compress="all"
+                                />
+                            </div>
+                        </f:for>
+                    </f:alias>
+                </div>
+            </div>
+           <div style="clear:both;width:100%; font-family: Monaco,Consolas,monospace;font-size: 12px;line-height: 18px;margin: 0;padding: 0; background: #444444;">
+                <pre style="{style.typo3}">
+&lt;f:alias map=&quot;{ shop: {    0: { preis: '59,-&euro;', rot: '15', super: 'super', slogan: 'Mein Angebot an dich',
+                                 subtitle: 'Ihr Auftrag unterst&uuml;tzt das dynamische Kreativ-Internet',
+                                 path: '/typo3conf/ext/horny_shit/Resources/Public/Example/Kaffeepause.jpg'},
+                           1: { preis: '69,-&euro;', rot: '355', super: 'toll ', slogan: ' Lass Farbe sprechen  ',
+                                 subtitle: '  G&ouml;nnen Sie Ihrem Shop mal einen Blickfang :-) oder zwei',
+                                 path: '/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg'},
+                           2: { preis: '99,-&euro;', rot: '5', super: 'sch&ouml;n', slogan: 'Weihnachten ist bald! ',
+                                 subtitle: 'Mal etwas Besonderes f&uuml;r Ihren Gesch&auml;ftsfreund',
+                                 path: '/typo3conf/ext/horny_shit/Resources/Public/Example/ZumVerschenken.jpg'},
+                           3: { preis: '59,-&euro;', rot: '35', super: 'geil ', slogan: 'horny shit Boni',
+                                 subtitle: 'F&ouml;rdern wollen - soziale Gerechtigkeit statt christliche K&auml;lte',
+                                 path: '/typo3conf/ext/horny_shit/Resources/Public/Example/FarbeImLeben.jpg'}
+                                }}&quot;
+&gt;
+    &lt;f:for each=&quot;{shop}&quot; as=&quot;shopItem&quot;&gt;
+        &lt;div style=&quot;width:{shopWidth}px;height: {shopHeight}px; overflow: hidden;padding:1%; float:left;&quot;&gt;
+            &lt;hornyShit:svt src=&quot;/typo3conf/ext/horny_shit/Resources/Public/Example/ShopMuster.svg&quot;
+                           prepare=&quot;{ 0: {  search: '59,-&euro;',
+                                            replace: '{shopItem.preis}',
+                                            method: 'normal'},
+                                      1: {  search: 'Super',
+                                            replace: '{shopItem.super}',
+                                            method: 'normal'},
+                                      2: {  search: 'Mein Geschenk f&uuml;r dich',
+                                            replace: '{shopItem.slogan}',
+                                            method: 'normal'},
+                                      3: {  search: 'Ihre Spende unterst&uuml;tzt das dynamische kreative Internet',
+                                            replace: '{shopItem.subtitle}',
+                                            method: 'normal'},
+                                      4: {  search: '/typo3conf/ext/horny_shit/Resources/Public/Example/Farbalarm.jpg',
+                                            replace: '{shopItem.path}',
+                                            method: 'normal'},
+                                      5: {  search: '(42536 ',
+                                            replace: '({shopItem.rot} ',
+                                            method: 'normal'}
+                                        }&quot;
+                           compress=&quot;all&quot;
+            /&gt;
+        &lt;/div&gt;
+    &lt;/f:for&gt;
+&lt;/f:alias&gt;
+                </pre>
+                <br />
+                <pre style="{style.browse}">
+Resultierender Code wird hier nicht dargestellt. Nutzen Sie FireBug.
+                </pre>
+            </div>
+        </f:for>
+    </f:alias>
+</f:section>
+</body>
+</html>

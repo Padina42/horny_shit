@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+        /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+
+    -->
+</head>
+<body >
+<f:layout name="Default" />
+<f:section name="main">
+
+    <f:alias map="{ svg:        {   original:   '\typo3conf\ext\horny_shit\Resources\Public\Icons\HornyshitHornyShit.svg',
+                                    ddr:        '\typo3conf\ext\horny_shit\Resources\Public\Example\DDR.svg',
+                                    merkel:     '\typo3conf\ext\horny_shit\Resources\Public\Example\merkel3.png',
+                                    mmMain:     '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-General.png',
+                                    mmPrep:     '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Prepare.png',
+                                    mmWork:     '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-WorkOver.png',
+                                    mmRebuild1: '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Rebuild_one.png',
+                                    mmRebuild2: '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Rebuild_two.png',
+                                    mmRebuild3: '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Rebuild_three.png',
+                                    mmRebuildC: '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Rebuild_compress.png',
+                                    mmExtract:  '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-JSON.png',
+                                    mmRemove:   '\typo3conf\ext\horny_shit\Resources\Public\Example\MindMap-Remove.png'},
+                    myWidth:    '150',
+                    myHeight:   '120',
+                    style:      {   pre :   ';float:left; width:60%; font-family: Monaco,Consolas,monospace;font-size: 12px;line-height: 18px;margin: 0;padding: 0; background: #444444;',
+                                    doc:    ';clear:both; padding:1%;;clear:both; float:left; width:30%; ',
+                                    head:   'clear:both; width: 100%; padding:1.87rem 0px 0.37rem 0px; margin: 0px;',
+                                    body:   'color: #252519; font-family: Palatino,FreeSerif,serif; font-size: 15px;line-height: 22px;'
+                                    browse: 'padding:4%;color:#ff9999; padding 2%px; overflow:auto;',
+                                    typo3:  'padding:4%;color:#F5F6CE; padding 2%px; overflow:auto;',
+                                    politics:'background-color: rgb(179,90,0);background-color: rgba(179,90,0,0.1); clear:both; width: 1005;'
+                                    }
+                }"
+    >
+
+        <div style="{style.body}">
+            <h1><em>svt</em>-Viewhelper - beispielhaft vorgestellt</h1>
+            <!-- I build this cascade, becaus struggles sometimes, if i have too much entrys -->
+            <f:alias map="{zeroCharge : {  0:  {name: 'I000Vorwort',            hNr: '2', nr: '0', title: 'Vorwort zu version 0.0.4.'},
+                                           1:  {name: 'J000EinfuehrungSvg',     hNr: '2', nr: '1', title: 'Nutzmöglichkeiten von SVG'},
+                                           2:  {name: 'J000EinfuehrungSvg0',    hNr: '2', nr: '1.1', title: 'Didaktische Vorbemerkung'},
+                                           3:  {name: 'J000EinfuehrungSvg0a',   hNr: '2', nr: '1.2', title: 'Einfache Formen'},
+                                           4:  {name: 'J000EinfuehrungSvg1',    hNr: '2', nr: '1.2.1', title: 'Rechteck und Pfade'},
+                                           5:  {name: 'J000EinfuehrungSvg2',    hNr: '2', nr: '1.2.2', title: 'Kreis, Elipse, Pfade (+ Browserfehler)'},
+                                           6:  {name: 'J000EinfuehrungSvg3',    hNr: '2', nr: '1.3', title: 'Mächtige Formen'},
+                                           7:  {name: 'J000EinfuehrungSvg4',    hNr: '2', nr: '1.3.1', title: 'Linien, Polylinien und Pfade'},
+                                           8:  {name: 'J000EinfuehrungSvg5',    hNr: '2', nr: '1.3.2', title: '... Strategie-Idee für SVG'},
+                                           10:  {name: 'J000EinfuehrungSvg10',  hNr: '2', nr: '1.4', title: '<em>svt</em>-Anwendungsidee Diagramm als statisches Beispiel'},
+                                           11:  {name: 'J000EinfuehrungSvg11',  hNr: '2', nr: '1.4.1', title: 'Balkendiagramm'},
+                                           12:  {name: 'J000EinfuehrungSvg12',  hNr: '2', nr: '1.4.2', title: 'Tortendiagramm'},
+                                           13:  {name: 'J000EinfuehrungSvg13',  hNr: '2', nr: '1.5', title: 'Rechnen mit <em>calculate</em> im View'},
+                                           99:  {name: 'J000EinfuehrungSvg99',  hNr: '2', nr: '1.x', title: 'Nachsatz'}
+            }}">
+                <f:alias map="{firstCharge : { 10:  {name: 'K000EinfuehrungVorteile',    hNr: '2', nr: '2', title: 'Einleitung'},
+                                               11:  {name: 'K001EinfuehrungVorteile',    hNr: '3', nr: '2.1', title: 'Didaktische Hilfe'},
+                                               12:  {name: 'K010ExmapleHornyShit',       hNr: '2', nr: '3', title: '<em>svt:svt</em> versus <em>f:image</em>'},
+                                               13:  {name: 'K011ExmapleHornyShit',       hNr: '3', nr: '3.1', title: 'SVG eingekapselt im <em>img</em>-Tag dank &lt;f:image&gt;'},
+                                               14:  {name: 'K012ExmapleHornyShit',       hNr: '3', nr: '3.2', title: 'SVG mit Link und &quot;<em>hover</em>&quot;-Pfütze dank &lt;svt:svt&gt;'}
+                }}">
+                    <f:alias map="{secondCharge : { 4:  {name: 'K029SVGManipulation',       hNr: '2', nr: '4', title: 'Die Flagge der DDR bearbeitet mit <em>svt:svt</em>'},
+                                                    5:  {name: 'K030SVGManipulation',       hNr: '4', nr: '4.0.1', title: 'Technik trifft Politik '},
+                                                    6:  {name: 'K031Dokumentationshinweis', hNr: '3', nr: '4.1', title: 'Hinweise zur Dokumentation'},
+                                                    7:  {name: 'K032ErsteManipulation',     hNr: '3', nr: '4.2', title: 'Erste dynamische Manipulationen am SVG-Code'},
+                                                    8:  {name: 'K032ErsteManipulation1',    hNr: '4', nr: '4.2.1', title: 'Flagge - <em>img</em>-Tag erstellen in zwei Varianten'},
+                                                    9:  {name: 'K032ErsteManipulation2',    hNr: '4', nr: '4.2.2', title: 'Flagge - SVG-Code inline mit <em>svt</em>-Viewhelper'}
+                   }}">
+                        <f:alias map="{thirdCharge :  {0:  {name: 'K033StringManipulation',     hNr: '2', nr: '5', title: 'Manipulatoren im <em>svt</em>-Viewhelper - Ihre Vielfalt der Möglichkeiten'},
+                                                       1:  {name: 'K033HelpfullMindmaps',       hNr: '3', nr: '5.1', title: 'Mind-Map definiert Konfigurationsarray'},
+                                                       2:  {name: 'K034OrderOfOptions1',        hNr: '3', nr: '5.2', title: '<em>svg</em>-Manipulatoren - Reihenfolge der Abarbeitung'},
+                                                       3:  {name: 'K033StringManipulation1',    hNr: '3', nr: '5.3', title: 'Nutzung von <em>remove</em>-Manipulator in <em>svt</em>-Viewhelper'},
+                                                       4:  {name: 'K033StringManipulation2',    hNr: '3', nr: '5.4', title: 'Nutzung von Suchen-Ersetzen in <em>prepare</em>-Manipulator in <em>svt</em>-Viewhelper'},
+                                                       5:  {name: 'K033StringManipulation3',    hNr: '4', nr: '5.4.1', title: 'Nutzung von Suchen-Ersetzen in <em>workOver</em>-Manipulator in <em>svt</em>-Viewhelper'},
+                                                       6:  {name: 'K035RebuildGeneral',         hNr: '3', nr: '5.5', title: 'In <em>rebuild</em> auf einzelner Knoten mit &quot;xPath&quot; zugreifen'},
+                                                       7:  {name: 'K036RebuildEasy',            hNr: '4', nr: '5.5.1', title: 'SVG mit <em>rebuild</em>-Manipulator einfach ändern'},
+                                                       8:  {name: 'K036RebuildEasy1',           hNr: '4', nr: '5.5.2', title: 'SVG mit mehreren <em>xPathes</em> und <em>rebuild</em>-Manipulator Anweisungen reduziert'},
+                                                       9:  {name: 'K036RebuildEasy2',           hNr: '4', nr: '5.5.3', title: 'SVG mit <em>rebuild</em>-Manipulator, um ein Bild erweitern'},
+                                                       10: {name: 'K38JsonPhp',                 hNr: '3', nr: '5.6', title: 'Wiederholungen - nein, Nutzung von JSON oder PHP.'},
+                                                       11: {name: 'K37Compress',                hNr: '3', nr: '5.7', title: '... und der <em>compress</em>-Manipulator zum Schluss'}
+                        }}">
+                            <f:alias map="{forthCharge:  {  0:  {name: 'K034OrderOfOptions2',       hNr: '3', nr: '5.8', title: 'Weitere <em>svt</em>-Viewhelper Optionen vereinfachen Beschreibung der Manipulatoren'},
+                                                            1:  {name: 'K039OrderOfOptions',        hNr: '3', nr: '5.9', title: 'Manipulatoren im <em>svt</em>-Viewhelper'},
+                                                            1:  {name: 'K039DefaultManipulators',   hNr: '3', nr: '5.10.', title: 'Per Default aktive Manipulatoren'},
+                                                            2:  {name: 'K050Bugs',                  hNr: '2', nr: '6', title: 'Fehlerhafter Konfiguration und das svt-Attribut <em>infoConfigError</em>'},
+                                                            3:  {name: 'K051Bugs1',                 hNr: '2', nr: '6.1', title: 'Wie mit einer fehlerhafter Konfiguration umgehen?'},
+                                                            8:  {name: 'K040Anleitung',             hNr: '2', nr: '7', title: 'Ihre Unterstützung'},
+                                                            9:  {name: 'K041MyShop',                hNr: '3', nr: '7.1', title: 'Mein Shop'},
+                                                            10: {name: 'K042MyContact',             hNr: '3', nr: '7.2', title: 'Hinweis auf das Impressum'}
+                            }}">
+                                <f:alias map="{lastCharge : {80: {name: 'K020Intermezzo',                hNr: '2', nr: '8', title: 'Ein Abschlussstatement - noch ein bissChen mehr Politik'},
+                                                             81: {name: 'K021Wuensche',                  hNr: '3', nr: '8.1', title: 'Was ich mir für die Zukunft wünsche'},
+                                                             82: {name: 'K022Unwunsch',                  hNr: '3', nr: '8.2', title: 'Was ich mir für die Zukunft NICHT wünsche'}
+                                }}">
+                                    <f:alias map="{ list: { 0:  zeroCharge,
+                                                            1:  firstCharge,
+                                                            2:  secondCharge,
+                                                            3:  thirdCharge,
+                                                            4:  forthCharge,
+                                                            99: lastCharge
+                                        }}">
+
+                                        <h1>Inhaltsverzeichnis</h1>
+                                        <ul style="list-style-position: inside; list-style-type: none;">
+                                            <f:for each="{list}" as="sublist">
+                                                <f:for each="{sublist}" as="partial">
+                                                    <li><a href="#{partial.name}" style="width: 45px;display: inline-block;">{partial.nr}.</a> {partial.title->f:format.raw()}</li>
+                                                </f:for>
+                                            </f:for>
+                                        </ul>
+                                        <h1>Beschreibung</h1>
+                                        <f:for each="{list}" as="sublist">
+                                            <f:for each="{sublist}" as="partial">
+                                                <f:render partial="Content/{partial.name}"
+                                                          section="main"
+                                                          arguments="{svg: svg, myWidth: myWidth, myHeight: myHeight, style: style, partial:partial}"
+                                                />
+                                            </f:for>
+                                        </f:for>
+                                    </f:alias>
+                                </f:alias>
+                            </f:alias>
+                        </f:alias>
+                    </f:alias>
+                </f:alias>
+            </f:alias>
+        </div>
+    </f:alias>
+</f:section>
+</body>
+</html>

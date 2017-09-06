@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div >
+            <div style="color:#b35a00;">
+            <p>1989 gab die Funktionärsriege der DDR ihren Abwehrkampf auf und 1990 kam es so zur
+                freundlichen Übernahme der BRD durch die DDR - oder war es doch umgekehrt? Naja egal.
+                Beide Länder hatten eine gemeinsame Geschichte, eine gemeinsame Sprache und eine ähnlich hohe
+                Autoritätsgläubigkeit, was sich auch in ihren sehr ähnlichen Flaggen zeigte.</p>
+
+            <p>Die DDR gab sich auf der Flagge eher symbolisch, während die Bundesrepublik auf jeden Firlefanz
+                verzichtete.</p>
+            </div><p>Eine ähnliche Verwandtschaft wie zwischen den Flaggen von BRD und DDR
+            besteht zwischen HTML und SVG.
+                Aktuell führt das SVG ein Schattendasein neben dem HTML. Aber wer weiß, wie es in zehn
+                oder zwanzig Jahren sein wird. </p>
+            <p>Die Analogie eignet sich aus meiner Sicht gut, um die Vereinigung von HTML und SVG mit dem
+                <em>svt</em>-Viewhelper vorzustellen.</p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+
+</f:section>
+</body>
+</html>

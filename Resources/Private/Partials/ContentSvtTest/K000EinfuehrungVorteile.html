@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <p>SVG ist wie HTML eine <a href="https://de.wikipedia.org/wiki/Auszeichnungssprache">Markup-Sprache</a>.
+            Der <em>svt</em>-Viewhelper (<em>s</em>exy-</em>v</em>ariable-<em>t</em>emplate-Viewhelper) baut nach dem dynamischen Umbau des SVG-Codes diesen
+                direkt in das HTML ein. Das hat folgende Vorteile:</p>
+            <ul>
+                <li>Der Browser muss eine Dateiabfrage weniger machen, weil das SVG schon im HTML integriert ist.</li>
+                <li>Das SVG kann direkt per JavaScript und über das globale CSS beeinflusst werden.</li>
+                <li>Der im HTML integrierte SVG-Code erlaubt wie HTML Links und <em>hover</em>-Effekte.</li>
+                <li>Als Frontend-Entwickler haben Sie direkt Zugriff auf den SVG-Code.</li>
+                <li>Als Redakteur könnten Sie schnelle einen Muster-SVG-Code durch einen anderen ersetzen, um ihre Seite zum Beispiel für Weihnachten zu schmücken.</li>
+            </ul>
+            <p>Natürlich hat das SVG im HTML auch Nachteile:</p>
+            <ul>
+                <li>Sie müssen als Frontentwickler Neues lernen - die Markup-Strache SVG und mit den dazugehörigen Editoren.</li>
+                <li>Ein Editor für Vektorgraphiken, wie zum Beispiel <a href="https://inkscape.org/de">InkScape</a>, arbeitet andere als
+                    ein Pixelbild-Editor, wie zum Beispiel <a href="https://www.gimp.org/">Gimp</a> oder <a href="http://www.adobe.com/de/products/photoshop.html">Photoshop</a>.</li>
+                <li>Im SVG haben Sie KEINEN automatischen Textumbruch.</li>
+                <li>Die Konfigurationssprache des <em>svt</em>-Viewhelpers ist nicht ganz so einfach.</li>
+            </ul>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>
+
+

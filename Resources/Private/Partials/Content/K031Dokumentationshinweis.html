@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <p>Das vorliegende Plugin zeigt  nur Beispiele der Anwendung des <em>svt</em>-Viewhelpers. Die Abkürzung 'svt' stammt von mir.</p>
+        </div>
+        <div>
+            <p>Abbildungen und Fotos sind von mir oder sie sind auf wikipedia.de als gemeinfrei gekennzeichnet gewesen.</p>
+        </div>
+        <div>
+            <p>Die genaue Hierarchie der Konfiguration sowie die Manipulationsmöglichkeiten entnehmen Sie dem Mind-Map,
+            dass Sie im Dokumentationsordner dieser Extension finden.</p>
+            <p>Ich nutze als Freeware für Mind-Maps eine alter Version des Programms <a href="https://freemind.de.softonic.com/">FreeMind</a>.
+                <a href="https://www.freeplane.org/">FreePlane</a> sollte aber auch funktionieren (ungetestet).</p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}"<strong>Benennung;</strong>
+<em>Ich habe den Viewhelper bewusst zu <strong>svt</strong> (<strong>s</strong>exy-<strong>v</strong>ariable-<strong>t</strong>emplate)
+umbenannt, weil die Abkürzung <strong>svg</strong> (Scalable Vector Graphics) meine Phantasie zu sehr beschnitt
+</em></pre>
+        <pre style="{style.browse}"><em>Kurven beflügeln die Phantasie des Mannes.
+Kurven machen auch das Internet sexy.
+Mit <strong>svt</strong> (<strong>s</strong>exy <strong>v</strong>ariable <strong>t</strong>emplate) werden
+Content-Management-Systeme und Shop-Systeme sexyer.</em></pre>
+    </div>
+</f:section>
+</body>
+</html>

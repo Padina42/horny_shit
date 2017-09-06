@@ -1,0 +1,24 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+            horny_shit {
+                title = LLL:EXT:horny_shit/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.horny_shit_title
+                description = LLL:EXT:horny_shit/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.horny_shit_description
+                tt_content_defValues {
+                    CType = hornyshit_horny_shit
+                }
+                icon = EXT:horny_shit/Resources/Public/Icons/HornyshitHornyShit.svg
+                iconIdentifier = icon-hornyshit-horny_shit
+            }
+            svt_test {
+                title = LLL:EXT:horny_shit/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.svt_test_title
+                description = LLL:EXT:horny_shit/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.svt_test_description
+                tt_content_defValues {
+                    CType = hornyshit_svt_test
+                }
+                icon = EXT:horny_shit/Resources/Public/Icons/SvtTest.svg
+                iconIdentifier = icon-hornyshit-svt_test
+            }
+    }
+    show := addToList(horny_shit)
+    show := addToList(svt_test)
+}

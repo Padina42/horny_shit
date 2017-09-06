@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:hornyShit="http://mobger.de/ns/Porth/HornyShit/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head>
+<body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr}. {partial.title->f:format.raw()}</h{partial.hNr}>
+    <div style="{style.doc}" id="{partial.name}">
+        <h5>line - die einfachste Verbindung zwischen zwei Punkten</h5>
+        <div>Zur Definition einer Strecke braucht man genau zwei Punkte – den Anfang und das Ende. Entsprechend ist der <em>line</em>-Tag definiert.
+            Eine Strecke ist im SVG relativ zum Koordinatensystem absolut positioniert. Wegen ihrer Einfachheit eignet sie sich gut, um
+            das merkwürdige Verhalten der Transformationsmatrix zu deuten. Letztendlich sind die Beispiele nur von <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform">MDN</a>
+            adaptiert worden. Vorn der schwarzen Basislinie leitet sich die blaue Translationslinie ab. </div>
+        <div>
+            Die cyanfarbene um 50% vergrößerte Linie leitet sich von der schwach cyanfarbenden Linie ab. Bemerkenswert ist, dass
+            die beiden Linie sich nicht überdecken. Dies ist dem Vektor-Charakter geschuldet. Nicht die Strecke wird vergrößert,
+            sondern die Werte beider Vektor-Punkte werden vergrößert und damit entsprechend auf die Gerade.
+        </div>
+
+        <div>Wenn man nun Texte im Text positionieren will. hat man zewei Möglichekeiten. Die einfache Variante wendet
+            die Drehung (transform) auf den <em>text</em>-Tag an. In der zweiten Varianten verknüpft man den Text über
+            das xlink:href-Attribut mit dem path-Tag, der auch eine geschwungene Linie sein darf.  </div>
+        <div> Die meisten Tutorial, wie der vorliegende Tutorials-Versuch auch, erläutern nur, wie die einzelnen Elmente
+            funktionieren. Leider geben sie keine Strategie vor, wie man systematisch, planbar SVG's komponiert. Hier
+            gibt es noch viel Spielraqum für interessante Strategien. im Nachfolgenden findet sich meine kleine Heuristik,
+            wie ich an meine Darstellungsherausforderungen herangehe.
+        </div>
+    </div>
+    <div style="{style.doc}" id="{partial.name}">
+        <div>
+            <svg viewBox="0 0 2000 3000" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+                <line x1="175" y1="100" x2="875" y2="1525"
+                      style="stroke-width: 1%; stroke: black; "
+                />
+                <g transform="matrix(1,0, 0, 1, 225, 10)" id="j000svg4translation">
+                    <line x1="175" y1="100" x2="875" y2="1525" style="stroke-width: 1%; stroke: blue; "/>
+                </g>
+                <text x="700" y="50" transform="rotate(20 700,40)" style="font-size:5em; color:darkred; stroke:darblue; fill:darkgreen">
+                    Drehungs-Beispiel - einfach
+                </text>
+                <path id="MyPath"
+                      d="M 1000 1300
+             C 1200 1200 1300   0 2600 1100"
+                      style="fill:transparent;"
+                />
+                <linearGradient id="textGrad">
+                    <stop stop-color="#c00"/>
+                    <stop stop-color="#da0" offset="100%"/>
+                </linearGradient>
+                <text fill="url(#textGrad)"
+                      textLength="1300" lengthAdjust="spacingAndGlyphs"
+                      style="  stroke: #ee0;font-family: sans-serif;font-weight: bold;font-size: 10em; filter: drop-shadow(2px 2px 2px #a60);"
+                >
+                    <textPath xlink:href="#MyPath"  method="stretch" spacing="auto">
+                        Jugendstil statt Bauhaus
+                    </textPath>
+                </text>
+
+                <g transform="matrix(1, 0, 0, 1, -100, 0)">
+                    <line x1="175" y1="100" x2="875" y2="1525" style="stroke-width: 1%; stroke: cyan; opacity:0.5; "/>
+                    <g transform="matrix(1.5, 0, 0, 1.5, 0, 0)">
+                        <line x1="175" y1="100" x2="875" y2="1525" style="stroke-width: 1%; stroke: cyan; "/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div style="{style.pre}">
+        <pre style="{style.typo3}">
+&lt;svg viewBox=&quot;0 0 2000 3000&quot; width=&quot;100%&quot; height=&quot;auto&quot; preserveAspectRatio=&quot;xMidYMid meet&quot;&gt;
+    &lt;line x1=&quot;175&quot; y1=&quot;100&quot; x2=&quot;875&quot; y2=&quot;1525&quot;
+          style=&quot;stroke-width: 1%; stroke: black; &quot;
+    /&gt;
+    &lt;g transform=&quot;matrix(1,0, 0, 1, 225, 10)&quot; id=&quot;j000svg4translation&quot;&gt;
+        &lt;line x1=&quot;175&quot; y1=&quot;100&quot; x2=&quot;875&quot; y2=&quot;1525&quot; style=&quot;stroke-width: 1%; stroke: blue; &quot;/&gt;
+    &lt;/g&gt;
+    &lt;text x=&quot;700&quot; y=&quot;50&quot; transform=&quot;rotate(20 700,40)&quot; style=&quot;font-size:5em; color:darkred; stroke:darblue; fill:darkgreen&quot;&gt;
+        Drehungs-Beispiel - einfach
+    &lt;/text&gt;
+    &lt;path id=&quot;MyPath&quot;
+          d=&quot;M 1000 1300
+ C 1200 1200 1300   0 2600 1100&quot;
+          style=&quot;fill:transparent;&quot;
+    /&gt;
+    &lt;linearGradient id=&quot;textGrad&quot;&gt;
+        &lt;stop stop-color=&quot;#c00&quot;/&gt;
+        &lt;stop stop-color=&quot;#da0&quot; offset=&quot;100%&quot;/&gt;
+    &lt;/linearGradient&gt;
+    &lt;text fill=&quot;url(#textGrad)&quot;
+          textLength=&quot;1300&quot; lengthAdjust=&quot;spacingAndGlyphs&quot;
+          style=&quot;  stroke: #ee0;font-family: sans-serif;font-weight: bold;font-size: 10em; filter: drop-shadow(2px 2px 2px #a60);&quot;
+    &gt;
+        &lt;textPath xlink:href=&quot;#MyPath&quot;  method=&quot;stretch&quot; spacing=&quot;auto&quot;&gt;
+            Jugendstil statt Bauhaus
+        &lt;/textPath&gt;
+    &lt;/text&gt;
+
+    &lt;g transform=&quot;matrix(1, 0, 0, 1, -100, 0)&quot;&gt;
+        &lt;line x1=&quot;175&quot; y1=&quot;100&quot; x2=&quot;875&quot; y2=&quot;1525&quot; style=&quot;stroke-width: 1%; stroke: cyan; opacity:0.5; &quot;/&gt;
+        &lt;g transform=&quot;matrix(1.5, 0, 0, 1.5, 0, 0)&quot;&gt;
+            &lt;line x1=&quot;175&quot; y1=&quot;100&quot; x2=&quot;875&quot; y2=&quot;1525&quot; style=&quot;stroke-width: 1%; stroke: cyan; &quot;/&gt;
+        &lt;/g&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;
+
+        </pre>
+    </div>
+</f:section>
+</body>
+</html>
+
+

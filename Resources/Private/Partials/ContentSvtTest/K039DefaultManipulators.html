@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:svt="http://mobger.de/ns/Porth/Svt/ViewHelpers"
+>
+<head>
+    <!--
+    /***************************************************************
+     *
+     *  Copyright notice
+     *
+     *  (c) 2017 Dr. Dieter Porth <info@mobger.de>
+     *
+     *  All rights reserved
+     *
+     *  This script is free software; you can redistribute it and/or modify
+     *  it under the terms of the GNU General Public License as published by
+     *  the Free Software Foundation; either version 3 of the License, or
+     *  (at your option) any later version.
+     *
+     *  The GNU General Public License can be found at
+     *  http://www.gnu.org/copyleft/gpl.html.
+     *
+     *  This copyright notice MUST APPEAR in all copies of the script!
+     ***************************************************************/
+    -->
+</head><body>
+<f:section name="main">
+    <h{partial.hNr} style="{style.head}">{partial.nr} {partial.title->f:format.raw()} </h{partial.hNr}>
+    <div style="{style.doc}"  id="{partial.name}">
+            <p>Folgende Aktionen werden per Default ausgeführt.</p>
+            <ul>
+                <li>Entfernen überflüssiger Angaben aus unerwünschten Namespaces, die zum Beispiel von Programmen wie InkScape beim Konstruieren von SVG-Code inline angelegt werden.</li>
+                <li>Entfernen von potentiell gefährlichen Script-Attributen, die zum Tracking, zur Spionage oder zum Spammen missbraucht werden könnten.</li>
+            </ul>
+            <p>Neben Sicherheitsaspekten haben die Aktionen den Vorteil,
+                da sie den Code kompakter machen. Natürlich können Sie die Default-Manipulatoren auch über die Konfiguration
+                abschalten, wenn sie diese aus Performance Gründen nicht haben wollen. </p>
+            <h5><em>svt</em>-Array - ein Konfigurationsarray für den Viewhelper</h5>
+            <p>
+                Die Steuerung des <em>svt</em>-Viewhelpers erfolgt über ein Konfigurations-Array. Es kann  relativ leicht und
+                flexibel an die jeweiligen Erfordernisse angepasst werden.  Die erste Ebene des Konfigurationsarray wird dabei
+                über die Attribute des <em>svt</em>-Viewhelpers abgebildet. Es wird hier von einem Konfigurations-Array gesprochen,
+                weil sie die gesamte Konfiguration auch als serialisierten PHP-Array oder als JSON-Array an den Viewhelper übergeben können.
+            </p>
+            <p>Ich hatte auch überlegt, auch das YAML-Format zuzulassen. Ich nahm davon Abstand, weil ein YAML-Parser nicht zum Standard-Umfang
+                eines PHP-Interpreters gehört. Auch XML-Format erschien mir einwenig zu aufwendig, für die einfachen Konfigurationen.</p>
+        </div>
+    </div>
+    <div style="{style.pre}">
+    </div>
+</f:section>
+</body>
+</html>
